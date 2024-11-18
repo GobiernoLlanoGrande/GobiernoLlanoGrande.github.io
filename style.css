@@ -1,11 +1,15 @@
 body {
     
-    background-color:  url('img/fondo.jpg');
+    background-color: white;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     margin: 0;
     font-family: Arial, sans-serif;
+}
+
+.fija{
+    z-index: 0px;
 }
 
 .banner {
@@ -15,10 +19,18 @@ body {
     overflow: hidden;
 }
 
+.encima-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10; /* Esto hace que la imagen quede sobre las demás */
+}
+
+/* Estilo para las imágenes del banner, que se desplazan horizontalmente */
 .banner-images-wrapper {
     display: flex;
-    transition: transform 1s ease-in-out;
-    width: 100%; /* Asegura que el contenedor de las imágenes abarque todo el ancho del banner */
+    transition: transform 0.5s ease-in-out;
 }
 
 .banner-image {
@@ -35,6 +47,7 @@ body {
     display: flex;
     gap: 10px; /* Espaciado horizontal entre los botones */
     flex-direction: row; /* Asegura que los botones estén en fila horizontal */
+    z-index: 20;
 }
 
 .banner-button {
@@ -73,6 +86,8 @@ body {
 .button4 {
     background-color: #5b78b1;
 }
+
+
 
 
 .content {
@@ -192,6 +207,21 @@ li:hover ul {
     width: 100%;
     height: 0.2px;
     background: linear-gradient(135deg, #e5b61e 50%, #fed428 50%); 
+    text-align: center;
+}
+
+.lin {
+    justify-content: center;
+    top: 0px;
+    overflow: hidden;
+    float: left;
+    display: flex;
+    padding: 1px;
+    color: white;
+    text-decoration: none;
+    width: 100%;
+    height: 1px;
+    background-color: #d53468;
     text-align: center;
 }
 
@@ -377,7 +407,7 @@ li:hover ul {
 
 .repeat-line {
     width: 100%;
-    height: 50px;  /* Ajusta la altura según lo que necesites */
+    height: 25px;  /* Ajusta la altura según lo que necesites */
     background-image: url('img/cinta.jpg');  /* Cambia el nombre de la imagen */
     background-repeat: repeat-x;  
     background-position: top center; 
