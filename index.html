@@ -17,13 +17,16 @@
 </div>
 
 <div class="banner" id="banner">
+    <div class="encima-wrapper">
+        <img src="img/encima.png" class="fija">
+    </div>
     <div class="banner-images-wrapper">
         <img src="img/banner2.jpg" alt="Banner 1" class="banner-image">
         <img src="img/banner3.jpg" alt="Banner 2" class="banner-image">
         <img src="img/banner4.jpg" alt="Banner 3" class="banner-image">
         <img src="img/banner5.jpg" alt="Banner 4" class="banner-image">
     </div>
-    <!-- Botones de navegación con colores diferentes -->
+
     <div class="banner-buttons">
         <button class="banner-button button1" data-index="0"></button>
         <button class="banner-button button2" data-index="1"></button>
@@ -32,60 +35,66 @@
     </div>
 </div>
 
-
-
 <div class="line"></div>
-<div class="menu-container">
-    <ul>
 
-        <li><a href="RANCHONUEVO/index.html">Agencias</a>
-        </li>  
-        <li><a href="#">Transparencia</a></li>
-        <li><a href="#">Servicios</a>
-            <ul>
-                <li><a href="#">R. d luz</a></li>
-                <li><a href="#">R. d tel</a></li>
-                <li><a href="#">Biblioteca</a></li>
-            </ul>
-        </li>
+<div class="l"></div> 
 
-        <li><a href="#">Ubicación</a></li>
-        
-    </ul>
+<div class="lin"></div>
+
+<div class="content">
+    <div class="card-container">
+        <div class="card">
+            <div class="card-content">
+                <img src="img/s.jpeg" alt="Imagen 1" class="front">
+                <img src="img/s.jpg" alt="Imagen de hover" class="hover-image"> 
+            </div>
+            <a href="pagina1.html" class="button">Ver Más</a>
+        </div>
+
+        <div class="card">
+            <div class="card-content">
+                <img src="img/rn.jpeg" alt="Imagen 2" class="front">
+                <img src="img/rn.jpg" alt="Imagen de hover" class="hover-image"> 
+            </div>
+            <a href="pagina2.html" class="button">Ver Más</a>
+        </div>
+
+        <div class="card">
+            <div class="card-content">
+                <img src="img/aaaa.jpg" alt="Imagen 3" class="front">
+                <img src="img/aaaa.jpg" alt="Imagen de hover" class="hover-image"> 
+            </div>
+            <a href="pagina3.html" class="button">Ver Más</a>
+        </div>
+    </div>
 </div>
 
-
 <script type="text/javascript">
-   const imagesWrapper = document.querySelector('.banner-images-wrapper');
-const buttons = document.querySelectorAll('.banner-button');
-const totalImages = document.querySelectorAll('.banner-image').length;
+    const imagesWrapper = document.querySelector('.banner-images-wrapper');
+    const buttons = document.querySelectorAll('.banner-button');
+    const totalImages = document.querySelectorAll('.banner-image').length;
 
-// Función para cambiar la imagen según el índice
-function changeBannerImage(index) {
-    // Desactivar todos los botones
-    buttons.forEach(button => button.classList.remove('active'));
-    
-    // Activar el botón correspondiente
-    buttons[index].classList.add('active');
+    function changeBannerImage(index) {
+        // Desactivar todos los botones
+        buttons.forEach(button => button.classList.remove('active'));
+        
+        buttons[index].classList.add('active');
 
-    // Mover las imágenes
-    const offset = -index * 100;
-    imagesWrapper.style.transform = `translateX(${offset}%)`;
-}
+        // Mover las imágenes de banner
+        const offset = -index * 100;
+        imagesWrapper.style.transform = `translateX(${offset}%)`;
+    }
 
-// Asignar eventos a los botones para cambiar la imagen
-buttons.forEach(button => {
-    button.addEventListener('click', (event) => {
-        const index = parseInt(event.target.dataset.index);
-        changeBannerImage(index);
+    buttons.forEach(button => {
+        button.addEventListener('click', (event) => {
+            const index = parseInt(event.target.dataset.index);
+            changeBannerImage(index);
+        });
     });
-});
 
-// Establecer el primer botón como activo al inicio
-changeBannerImage(0);
-
-
-
+    // Inicializar con la primera imagen
+    changeBannerImage(0);
 </script>
+
 </body>
 </html>
