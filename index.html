@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Santiago Llano Grande</title>
+</head>
+<body>
+
+<div class="linea">
+    <img src="img/oaxa.png" width="160px" height="40px">
+    <div class="search-container">
+        <input type="text" placeholder="Buscar...">
+        <button type="button">Buscar</button>
+    </div>
+</div>
+
+<div class="banner" id="banner">
+    <div class="banner-images-wrapper">
+        <img src="img/banner2.jpg" alt="Banner 1" class="banner-image">
+        <img src="img/banner3.jpg" alt="Banner 2" class="banner-image">
+        <img src="img/banner4.jpg" alt="Banner 3" class="banner-image">
+        <img src="img/banner5.jpg" alt="Banner 4" class="banner-image">
+    </div>
+    <!-- Botones de navegación con colores diferentes -->
+    <div class="banner-buttons">
+        <button class="banner-button button1" data-index="0"></button>
+        <button class="banner-button button2" data-index="1"></button>
+        <button class="banner-button button3" data-index="2"></button>
+        <button class="banner-button button4" data-index="3"></button>
+    </div>
+</div>
+
+
+
+<div class="line"></div>
+<div class="menu-container">
+    <ul>
+
+        <li><a href="agencias.html">Agencias</a>
+        </li>  
+        <li><a href="#">Transparencia</a></li>
+        <li><a href="#">Servicios</a>
+            <ul>
+                <li><a href="#">R. d luz</a></li>
+                <li><a href="#">R. d tel</a></li>
+                <li><a href="#">Biblioteca</a></li>
+            </ul>
+        </li>
+
+        <li><a href="#">Ubicación</a></li>
+        
+    </ul>
+</div>
+
+
+<script type="text/javascript">
+   const imagesWrapper = document.querySelector('.banner-images-wrapper');
+const buttons = document.querySelectorAll('.banner-button');
+const totalImages = document.querySelectorAll('.banner-image').length;
+
+// Función para cambiar la imagen según el índice
+function changeBannerImage(index) {
+    // Desactivar todos los botones
+    buttons.forEach(button => button.classList.remove('active'));
+    
+    // Activar el botón correspondiente
+    buttons[index].classList.add('active');
+
+    // Mover las imágenes
+    const offset = -index * 100;
+    imagesWrapper.style.transform = `translateX(${offset}%)`;
+}
+
+// Asignar eventos a los botones para cambiar la imagen
+buttons.forEach(button => {
+    button.addEventListener('click', (event) => {
+        const index = parseInt(event.target.dataset.index);
+        changeBannerImage(index);
+    });
+});
+
+// Establecer el primer botón como activo al inicio
+changeBannerImage(0);
+
+
+
+</script>
+</body>
+</html>
