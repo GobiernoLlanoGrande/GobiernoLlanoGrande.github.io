@@ -3,98 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Santiago Llano Grande</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rancho Nuevo</title>
+    <link href="csc/estilos.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 
-<div class="linea">
-    <img src="img/oaxa.png" width="160px" height="40px">
-    <div class="search-container">
-        <input type="text" placeholder="Buscar...">
-        <button type="button">Buscar</button>
-    </div>
-</div>
+    <!-- Banner de imagen -->
+    <header class="banner">
+        <img src="img/banner1.jpg" alt="Banner de la página">
+    </header>
 
-<div class="banner" id="banner">
-    <div class="encima-wrapper">
-        <img src="img/encima.png" class="fija">
-    </div>
-    <div class="banner-images-wrapper">
-        <img src="img/banner2.jpg" alt="Banner 1" class="banner-image">
-        <img src="img/banner3.jpg" alt="Banner 2" class="banner-image">
-        <img src="img/banner4.jpg" alt="Banner 3" class="banner-image">
-        <img src="img/banner5.jpg" alt="Banner 4" class="banner-image">
-    </div>
+    <!-- Menú de navegación -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="#home">Inicio</a></li>
+            <li><a href="Acerca.html">Acerca de</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="#contact">Contacto</a></li>
+            <li><a href="noticias.html">Noticias</a></li>
+        </ul>
+    </nav>
 
-    <div class="banner-buttons">
-        <button class="banner-button button1" data-index="0"></button>
-        <button class="banner-button button2" data-index="1"></button>
-        <button class="banner-button button3" data-index="2"></button>
-        <button class="banner-button button4" data-index="3"></button>
-    </div>
-</div>
+    <!-- Contenido principal -->
+    <main>
+        <section id="home">
+            <h1>Bienvenido a mi página</h1>
+            <p>Este es el contenido principal de la página de inicio.</p>
+        </section>
+        <section id="about">
+            <h2>Acerca de</h2>
+            <p>En este apartado podras encontar todo lo relacionado con Rancho Nuevo,</p>
+        </section>
+        <section id="services">
+            <h2>Servicios</h2>
+            <p>Descripción de los servicios que hay en Rancho Nuevo</p>
+        </section>
+        <section id="contact">
+            <h2>Contacto</h2>
+            <p>Formulario o información de contacto.</p>
+        </section>
+    </main>
 
-<div class="line"></div>
-
-<div class="repeat-line"></div> 
-
-<div class="lin"></div>
-
-<div class="content">
-    <div class="card-container">
-        <div class="card">
-            <div class="card-content">
-                <img src="img/s.jpeg" alt="Imagen 1" class="front">
-                <img src="img/s.jpg" alt="Imagen de hover" class="hover-image"> 
-            </div>
-            <a href="pagina1.html" class="button">Ver Más</a>
-        </div>
-
-        <div class="card">
-            <div class="card-content">
-                <img src="img/rn.jpeg" alt="Imagen 2" class="front">
-                <img src="img/rn.jpg" alt="Imagen de hover" class="hover-image"> 
-            </div>
-            <a href="https://ranchonuevo.github.io/" class="button">Ver Más</a>
-        </div>
-
-        <div class="card">
-            <div class="card-content">
-                <img src="img/aaaa.jpg" alt="Imagen 3" class="front">
-                <img src="img/aaaa.jpg" alt="Imagen de hover" class="hover-image"> 
-            </div>
-            <a href="SanFranciscoElMaguey.github.io" class="button">Ver Más</a>
-        </div>
-    </div>
-</div>
-
-<script type="text/javascript">
-    const imagesWrapper = document.querySelector('.banner-images-wrapper');
-    const buttons = document.querySelectorAll('.banner-button');
-    const totalImages = document.querySelectorAll('.banner-image').length;
-
-    function changeBannerImage(index) {
-        // Desactivar todos los botones
-        buttons.forEach(button => button.classList.remove('active'));
-        
-        buttons[index].classList.add('active');
-
-        // Mover las imágenes de banner
-        const offset = -index * 100;
-        imagesWrapper.style.transform = `translateX(${offset}%)`;
-    }
-
-    buttons.forEach(button => {
-        button.addEventListener('click', (event) => {
-            const index = parseInt(event.target.dataset.index);
-            changeBannerImage(index);
-        });
-    });
-
-    // Inicializar con la primera imagen
-    changeBannerImage(0);
-</script>
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2024 Mi Página Web. Todos los derechos reservados.</p>
+    </footer>
 
 </body>
 </html>
