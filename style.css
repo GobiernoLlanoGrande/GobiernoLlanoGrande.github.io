@@ -511,3 +511,87 @@ li:hover ul {
         text-align: center;
     }
 }
+
+footer {
+  background-color: #790b0a; /* Color institucional, puedes ajustarlo */
+  color: white;
+  padding: 20px 0;
+  font-size: 14px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
+.footer-section {
+  flex: 1;
+  padding: 0 15px;
+}
+
+.footer-section h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+}
+
+.footer-section ul li a:hover {
+  color: #ffd700; /* Color dorado al pasar el ratón */
+}
+
+.social-media {
+  list-style: none;
+}
+
+.social-media li {
+  margin-bottom: 10px;
+}
+
+.social-media li a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+}
+
+.social-media li a:hover {
+  color: #ffd700; /* Color dorado al pasar el ratón */
+}
+
+.footer-bottom {
+  background-color: #3e0d0c;
+  text-align: center;
+  padding: 10px;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 12px;
+}
+
+@media screen and (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-section {
+    padding: 10px 0;
+    text-align: center;
+  }
+}
