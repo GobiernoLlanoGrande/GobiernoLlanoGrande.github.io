@@ -164,7 +164,7 @@ h1 {
 
 .l {
     justify-content: center;
-    background-color: #03968c; /* Gradiente de verde tenue a verde más fuerte */
+    background: linear-gradient(45deg, #230202, #690a0a, #ad1818, #690a0a, #230202); /* Gradiente de verde tenue a verde más fuerte */
     overflow: hidden;
     font-family: Arial, Helvetica, sans-serif;
     float: left;
@@ -175,6 +175,18 @@ h1 {
     text-decoration: none;
     width: 98.55%;
     height: 25px;
+
+      background-size: 500% 100%; 
+  animation: shine 4s linear infinite;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
 }
 ul {
     list-style: none;
