@@ -512,6 +512,18 @@ li:hover ul {
     }
 }
 
+
+/* Estilo para la tira de imagen que se repite */
+.tira {
+    background-image: url('img/tira.jpg'); /* Ruta de la imagen de la tira */
+    background-repeat: repeat-x;  /* La imagen se repite horizontalmente */
+    height: 50px; /* Altura de la tira */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    background-size: 32% 100%; /* Ajusta el tamaño de la imagen a 50px de ancho y su altura automáticamente */
+    margin-bottom: 0px; /* Espacio entre la tira y el pie de página */
+}
+
+
 footer {
   background-color: #790b0a; /* Color institucional, puedes ajustarlo */
   color: white;
