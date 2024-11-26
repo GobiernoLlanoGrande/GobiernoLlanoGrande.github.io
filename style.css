@@ -19,14 +19,14 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 10; /* Esto hace que la imagen quede sobre las demás */
+    z-index: 10; 
 }
 
 
 .banner {
     position: relative;
     width: 100%;
-    height: 230px; /* Usar vh para mejor adaptabilidad */
+    height: 230px; 
     overflow: hidden;
 }
 
@@ -36,20 +36,21 @@ body {
 }
 
 .banner-image {
+    position: relative;
     width: 100%;
-    height: 100%;  /* Las imágenes se ajustan al tamaño del contenedor */
+    height: 100%;  
     object-fit: cover; 
 }
 
 
-/* Opcional: Si quieres que las imágenes se estiren perfectamente a la altura del banner */
+
 .banner-buttons {
     position: absolute;
-    left: 80px; /* Alineado a la izquierda */
-    bottom: 20px; /* Alineado a la parte inferior */
+    left: 80px; 
+    bottom: 20px;
     display: flex;
-    gap: 10px; /* Espaciado horizontal entre los botones */
-    flex-direction: row; /* Asegura que los botones estén en fila horizontal */
+    gap: 10px; 
+    flex-direction: row; 
     z-index: 20;
 }
 
@@ -95,7 +96,7 @@ body {
 
 .content {
     padding: 20px;
-    min-height: calc(100vh - 230px); /* Ajusta esto según la altura del banner */
+    min-height: calc(100vh - 230px); 
 }
 
 
@@ -105,19 +106,19 @@ h1 {
 
 
 .menu-container {
-    background-color: #a0045c; /* Cambiado a un color sólido */
+    background-color: #a0045c; 
     display: flex;
     justify-content: center;
     overflow: hidden;
     font-family: Arial, Helvetica, sans-serif;
     top: 10px;
     color: white;
-    width: 100%; /* Asegura que el menú ocupe todo el ancho */
+    width: 100%; 
 }
 
 .linea {
     justify-content: center;
-    background-image:url('img/cinta2.jpg'); /* Gradiente de verde tenue a verde más fuerte */
+    background-image:url('img/cinta2.jpg'); 
     overflow: hidden;
     font-family: Arial, Helvetica, sans-serif;
     float: left;
@@ -126,7 +127,7 @@ h1 {
     padding: 10px;
     color: white;
     text-decoration: none;
-    width: 98.55%;
+    width: 98.4%;
     height: 38px;
 }
 
@@ -164,7 +165,7 @@ h1 {
 
 .l {
     justify-content: center;
-    background: linear-gradient(45deg, #230202, #690a0a, #ad1818, #690a0a, #230202); /* Gradiente de verde tenue a verde más fuerte */
+    background: linear-gradient(45deg, #230202, #690a0a, #ad1818, #690a0a, #230202); 
     overflow: hidden;
     font-family: Arial, Helvetica, sans-serif;
     float: left;
@@ -173,7 +174,7 @@ h1 {
     padding: 10px;
     color: white;
     text-decoration: none;
-    width: 98.55%;
+    width: 98.4%;
     height: 25px;
 
       background-size: 500% 100%; 
@@ -188,6 +189,7 @@ h1 {
     background-position: -100% 0;
   }
 }
+
 ul {
     list-style: none;
     margin: 0;
@@ -236,7 +238,7 @@ li:hover ul {
     padding: 1px;
     color: white;
     text-decoration: none;
-    width: 100%;
+    width: 98.4%;
     height: 0.2px;
     background: linear-gradient(135deg, #e5b61e 50%, #fed428 50%); 
     text-align: center;
@@ -251,7 +253,7 @@ li:hover ul {
     padding: 1px;
     color: white;
     text-decoration: none;
-    width: 100%;
+    width: 98.4%;
     height: 1px;
     background-color: #d53468;
     text-align: center;
@@ -300,7 +302,7 @@ li:hover ul {
 .front, .hover-image {
     width: 100%;
     height: auto;
-    object-fit: cover; /* Esto garantiza que la imagen se recorte adecuadamente */
+    object-fit: cover; 
 }
 
 
@@ -355,18 +357,18 @@ li:hover ul {
         .card-container {
     display: flex;
     gap: 20px;
-    flex-wrap: wrap;  /* Permite que las tarjetas se muevan a la siguiente línea */
+    flex-wrap: wrap;  
     justify-content: center;
 }
 
 .card {
     perspective: 1000px;
-    flex: 1 1 300px;  /* Toma un tamaño flexible */
-    max-width: 300px; /* Limita el tamaño máximo de cada tarjeta */
+    flex: 1 1 300px;  
+    max-width: 300px; 
     margin: 10px;
     display: flex;
-    flex-direction: column;  /* Asegura que el botón quede debajo de la tarjeta */
-    align-items: center;  /* Centra el contenido horizontalmente */
+    flex-direction: column; 
+    align-items: center;  
 }
 
 .card-content {
@@ -376,7 +378,7 @@ li:hover ul {
     transform-style: preserve-3d;
     transition: transform 0.6s;
     display: flex;
-    flex-direction: column;  /* Asegura que el contenido de la tarjeta se apile verticalmente */
+    flex-direction: column;  
 }
 
 .card:hover .card-content {
@@ -457,15 +459,15 @@ li:hover ul {
 
 .repeat-line {
     width: 100%;
-    height: 25px;  /* Ajusta la altura según lo que necesites */
-    background-image: url('img/cinta.jpg');  /* Cambia el nombre de la imagen */
+    height: 25px; 
+    background-image: url('img/cinta.jpg');  
     background-repeat: repeat-x;  
     background-position: top center; 
 }
 
 @media (max-width: 768px) {
     .banner {
-        height: 150px;  /* Reduce el tamaño del banner */
+        height: 150px;  
     }
 
     .banner-buttons {
@@ -479,11 +481,11 @@ li:hover ul {
     }
 
     .card-content {
-        height: 300px;  /* Ajusta la altura de las tarjetas en pantallas pequeñas */
+        height: 300px;  
     }
 
     .linea, .lin, .l {
-        padding: 10px 5px;  /* Reduce el padding en pantallas más pequeñas */
+        padding: 10px 5px;  
     }
 
     .linea .search-container input[type="text"] {
@@ -493,16 +495,16 @@ li:hover ul {
 
 @media (max-width: 480px) {
     .linea {
-        padding: 5px;  /* Ajuste para pantallas muy pequeñas */
+        padding: 5px;  
     }
 
     .card-container {
-        flex-direction: column;  /* Organiza las tarjetas en una columna */
+        flex-direction: column;  
         align-items: center;
     }
 
     .card-content {
-        width: 90%;  /* Las tarjetas ocupan más ancho */
+        width: 90%;  
         height: auto;
     }
 
@@ -513,19 +515,20 @@ li:hover ul {
 }
 
 
-/* Estilo para la tira de imagen que se repite */
 .tira {
-    background-image: url('img/tira.jpg'); /* Ruta de la imagen de la tira */
-    background-repeat: repeat-x;  /* La imagen se repite horizontalmente */
-    height: 50px; /* Altura de la tira */
-    width: 100%; /* Ocupa todo el ancho disponible */
-    background-size: 32% 100%; /* Ajusta el tamaño de la imagen a 50px de ancho y su altura automáticamente */
-    margin-bottom: 0px; /* Espacio entre la tira y el pie de página */
+    background-image: url('img/tira.jpg'); 
+    background-repeat: repeat-x; 
+    height: 50px; 
+    width: 100%; 
+    background-size: 32% 100%; 
+    margin-bottom: 0px; 
 }
 
 
+
+
 footer {
-  background-color: #790b0a; /* Color institucional, puedes ajustarlo */
+  background-color: #790b0a; 
   color: white;
   padding: 20px 0;
   font-size: 14px;
@@ -564,7 +567,7 @@ footer {
 }
 
 .footer-section ul li a:hover {
-  color: #ffd700; /* Color dorado al pasar el ratón */
+  color: #ffd700; 
 }
 
 .social-media {
@@ -582,7 +585,7 @@ footer {
 }
 
 .social-media li a:hover {
-  color: #ffd700; /* Color dorado al pasar el ratón */
+  color: #ffd700; 
 }
 
 .footer-bottom {
@@ -606,4 +609,48 @@ footer {
     padding: 10px 0;
     text-align: center;
   }
+}
+
+
+
+/* Contenedor principal que aloja todo */
+.menu-container {
+    position: relative;
+    width: 100px; /* Aquí puedes cambiar el ancho del menú principal */
+}
+
+/* Estilos de la imagen que activa el menú */
+.menu-icon img {
+    width: 50px; /* Puedes ajustar el tamaño de la imagen principal aquí */
+    height: 50px;
+    cursor: pointer;
+}
+
+/* El menú de imágenes que aparece al pasar el cursor */
+.menu-items {
+    position: absolute;
+    top: 0;
+    left: 100%; /* Se despliega a la derecha de la imagen principal */
+    width: 500px; /* Aquí puedes modificar el ancho del menú desplegable */
+    display: none; /* Inicialmente el menú está oculto */
+    background-color: #333; /* Color de fondo del menú */
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Cada imagen dentro del menú */
+.menu-item {
+    margin-bottom: 0px;
+}
+
+/* Ajuste de las imágenes dentro del menú */
+.menu-item img {
+    width: 100%; /* Las imágenes dentro del menú se adaptan al ancho del contenedor */
+    border-radius: 5px;
+}
+
+/* Mostrar el menú cuando el cursor pase por encima de la imagen principal */
+.menu-container:hover .menu-items {
+    display: block;
 }
