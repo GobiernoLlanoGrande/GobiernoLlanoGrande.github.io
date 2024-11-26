@@ -9687,6 +9687,11 @@ h6,
 
 
 
+    
+
+
+    
+
 
     </style>
     <meta charset="utf-8">
@@ -9787,6 +9792,105 @@ z-index: -1;
        
     }
 
+
+
+
+.fija{
+    z-index: 0px;
+}
+
+
+.encima-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10; 
+}
+
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 230px; 
+    overflow: hidden;
+}
+
+.banner-images-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.banner-image {
+    position: relative;
+    width: 100%;
+    height: 100%;  
+    object-fit: cover; 
+}
+
+
+
+.banner-buttons {
+    position: absolute;
+    left: 80px; 
+    bottom: 20px;
+    display: flex;
+    gap: 10px; 
+    flex-direction: row; 
+    z-index: 20;
+}
+
+.banner-button {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: background-color 0.3s, opacity 0.3s;
+}
+
+.banner-button:hover {
+    background-color: white;
+    opacity: 1;
+}
+
+.banner-button.active {
+    background-color: #f0862b ;
+}
+
+/* Colores diferentes para cada botón */
+.button1 {
+    background-color: #e94c64;
+}
+
+.button2 {
+    background-color: #5ab038;
+}
+
+.button3 {
+    background-color: #8e418d;
+}
+
+.button4 {
+    background-color: #5b78b1;
+}
+
+
+
+
+.content {
+    padding: 20px;
+    min-height: calc(100vh - 230px); 
+}
+
+
+    
+
+
+    
+
     
   
  </style>
@@ -9803,6 +9907,30 @@ z-index: -1;
     </div>
 </div>
 
+<div class="banner" id="banner">
+    <div class="encima-wrapper">
+        <img src="img/encima3.png" class="fija">
+    </div>
+    <div class="banner-images-wrapper">
+        <img src="img/banner2.jpg" alt="Banner 1" class="banner-image">
+        <img src="img/banner3.jpg" alt="Banner 2" class="banner-image">
+        <img src="img/banner4.jpg" alt="Banner 3" class="banner-image">
+        <img src="img/banner5.jpg" alt="Banner 4" class="banner-image">
+    </div>
+
+    <div class="banner-buttons">
+        <button class="banner-button button1" data-index="0"></button>
+        <button class="banner-button button2" data-index="1"></button>
+        <button class="banner-button button3" data-index="2"></button>
+        <button class="banner-button button4" data-index="3"></button>
+    </div>
+</div>
+
+<div class="line"></div>
+
+<div class="l"></div> 
+
+<div class="lin"></div>
 
 
 
@@ -9814,7 +9942,7 @@ z-index: -1;
 
 <div class="ever1" >
 
-  
+    hola
 </div>
 
 
