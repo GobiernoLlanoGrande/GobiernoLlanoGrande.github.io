@@ -1,0 +1,115 @@
+/* Resetear márgenes y bordes por defecto */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo para el body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Estilo del banner */
+.banner img {
+    width: 100%;
+    height: auto;
+}
+
+/* Estilo del menú de navegación */
+.navbar {
+    background-color: #910909;
+
+    text-align: center;
+    padding: 10px 0;
+}
+
+.navbar ul {
+    list-style-type: none;
+}
+
+.navbar ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.navbar ul li a:hover {
+   color: #2eb7cf;
+}
+
+/* Estilo para el contenido principal */
+main {
+    padding: 20px;
+}
+
+h1, h2 {
+    color: #333333;
+    margin-bottom: 10px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+/* Estilo para el pie de página */
+footer {
+            text-align: left;
+            background-color: #740606;
+            color: white;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+}
+
+.linea {
+    justify-content: center;
+    background-image:url('img/cinta2.jpg'); /* Gradiente de verde tenue a verde más fuerte */
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    float: left;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    width: 98.55%;
+    height: $=px;
+}
+
+
+.linea img {
+    margin-right: 70px;
+}
+
+.linea .search-container {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 45px;
+}
+
+.linea .search-container input[type="text"] {
+    padding: 5px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.linea .search-container button {
+    padding: 5px 10px;
+    background-color: #a4a4a4;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.linea .search-container button:hover {
+    background-color: #dcdcdc;
+}
