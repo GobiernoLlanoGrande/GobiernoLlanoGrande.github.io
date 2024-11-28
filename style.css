@@ -9,24 +9,23 @@ body {
     font-family: Arial, sans-serif;
 }
 
-.fija{
-    z-index: 0px;
+.fija {
+    z-index: 0;
 }
-
 
 .encima-wrapper {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 10; 
+    z-index: 10;
 }
-
 
 .banner {
     position: relative;
     width: 100%;
-    height: 230px; 
+    height: 30vw; /* Hace que el banner sea relativo al ancho de la ventana */
+    max-height: 230px; /* Limita el tamaño máximo en pantallas grandes */
     overflow: hidden;
 }
 
@@ -39,7 +38,28 @@ body {
     position: relative;
     width: 100%;
     height: 100%;  
-    object-fit: cover; 
+    object-fit: cover;
+}
+
+/* Medias Queries para pantallas pequeñas (móviles) */
+@media (max-width: 600px) {
+    .encima-wrapper {
+        height: 50vw; /* En pantallas pequeñas, el banner toma el 50% del ancho de la pantalla */
+    }
+}
+
+/* Medias Queries para tabletas */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .banner {
+        height: 40vw; /* En tabletas, el banner toma un tamaño proporcional */
+    }
+}
+
+/* Medias Queries para pantallas grandes */
+@media (min-width: 1025px) {
+    .banner {
+        height: 230px; /* En pantallas grandes, mantén el tamaño original */
+    }
 }
 
 
@@ -613,44 +633,71 @@ footer {
 
 
 
-/* Contenedor principal que aloja todo */
-.menu-container {
+
+/* Estilos generales */
+.brillo-menu-container {
     position: relative;
-    width: 100px; /* Aquí puedes cambiar el ancho del menú principal */
+    display: inline-block;
+    width: 100%;  /* Asegura que el contenedor ocupe el 100% del ancho disponible */
 }
 
-/* Estilos de la imagen que activa el menú */
-.menu-icon img {
-    width: 50px; /* Puedes ajustar el tamaño de la imagen principal aquí */
-    height: 50px;
-    cursor: pointer;
+.brillo-img {
+    width: 70px;
+    transition: opacity 0.3s ease;
 }
 
-/* El menú de imágenes que aparece al pasar el cursor */
-.menu-items {
+/* Menú que contiene las tarjetas */
+.menu {
+    display: none;
     position: absolute;
-    top: 0;
-    left: 100%; /* Se despliega a la derecha de la imagen principal */
-    width: 500px; /* Aquí puedes modificar el ancho del menú desplegable */
-    display: none; /* Inicialmente el menú está oculto */
-    background-color: #333; /* Color de fondo del menú */
-    border-radius: 10px;
-    padding: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    top: 100%;
+    left: 0;
+    width: 100%;  /* Asegura que el menú ocupe el 100% del ancho disponible */
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 10;
 }
 
-/* Cada imagen dentro del menú */
-.menu-item {
-    margin-bottom: 0px;
+.card-container {
+    display: flex;
+    justify-content: space-around;  /* Espacio entre las tarjetas */
+    gap: 20px;  /* Aumentar el espacio entre las tarjetas */
+    flex-wrap: wrap;  /* Permite que las tarjetas se ajusten en múltiples líneas si es necesario */
 }
 
-/* Ajuste de las imágenes dentro del menú */
-.menu-item img {
-    width: 100%; /* Las imágenes dentro del menú se adaptan al ancho del contenedor */
-    border-radius: 5px;
+.card {
+    width: 30%;  /* Ancho de la tarjeta */
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    box-sizing: border-box;
 }
 
-/* Mostrar el menú cuando el cursor pase por encima de la imagen principal */
-.menu-container:hover .menu-items {
+.card:hover {
+    transform: scale(1.05);  /* Aumenta el tamaño de la tarjeta al pasar el cursor */
+}
+
+.card-content {
+    position: relative;
+}
+
+.front, .hover-image {
+    width: 100%;
+    height: auto;
     display: block;
+}
+
+
+
+
+
+/* Mostrar el menú al pasar el cursor sobre la imagen */
+.brillo-menu-container:hover .brillo-img {
+    opacity: 0.7;  /* Brillo de la imagen al pasar el cursor */
+}
+
+.brillo-menu-container:hover .menu {
+    display: block;  /* Muestra el menú con las tarjetas */
 }
