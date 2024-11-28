@@ -1,0 +1,72 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ol {
+    padding-left: 20px;
+}
+
+p {
+    color: #555;
+}
+
+/* Estilo del Banner */
+.banner {
+    background-color: #3b9dff;
+    color: white;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.banner h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.banner p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* Estilo de las secciones */
+.content, .info {
+    padding: 20px;
+    margin: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.content h2, .info h2 {
+    font-size: 1.8rem;
+    color: #3b9dff;
+}
+
+ul li, ol li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+/* Estilo del Pie de Página */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
