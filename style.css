@@ -652,7 +652,7 @@ footer {
     position: absolute;
     top: 100%;
     left: 0;
-    width: 100%;  /* Asegura que el menú ocupe el 100% del ancho disponible */
+    width: 30%;  /* Asegura que el menú ocupe el 100% del ancho disponible */
     background-color: rgba(0, 0, 0, 0.8);
     padding: 20px;
     box-sizing: border-box;
