@@ -8,6 +8,8 @@
 </head>
 <body>
 
+    
+
 <div class="linea">
     <img src="img/oaxa.png" width="160px" height="40px">
     <div class="search-container">
@@ -38,40 +40,54 @@
 
 <div class="lin"></div>
 
-<div class="brillo-menu-container">
-    <img src="img/brillo.png" width="70px" class="brillo-img">
-    <div class="menu">
-        <div class="card-container">
-            <div class="card">
-                <div class="card-content">
-                    <img src="img/s.jpeg" alt="Imagen 1" class="front">
-                    <img src="img/s.jpg" alt="Imagen de hover" class="hover-image"> 
-                </div>
-                <a href="pagina1.html" class="button">Ver Más</a>
-            </div>
 
-            <div class="card">
-                <div class="card-content">
-                    <img src="img/rn.jpeg" alt="Imagen 2" class="front">
-                    <img src="img/rn.jpg" alt="Imagen de hover" class="hover-image"> 
-                </div>
-                <a href="RANCHONUEVO/index.html" class="button">Ver Más</a>
-            </div>
+<!-- Botón con imagen -->
+<button class="boton-imagen" id="boton-imagen">
+    <img src="img/brillo2.png" alt="Botón con imagen" class="boton-imagen">
+</button>
 
-            <div class="card">
-                <div class="card-content">
-                    <img src="img/aaaa.jpg" alt="Imagen 3" class="front">
-                    <img src="img/aaaa.jpg" alt="Imagen de hover" class="hover-image"> 
-                </div>
-                <a href="MAGUEY/index1.html" class="button">Ver Más</a>
-            </div>
+<!-- Menú de fondo semi vino que aparece al hacer clic -->
+<div class="menu" id="menu" style="display: none;">
+    <ul>
+        <li class="menu-item" data-target="llano-grande">Llano Grande</li>
+        <li class="menu-item" data-target="maguey">Maguey</li>
+        <li class="menu-item" data-target="rancho-nuevo">Rancho Nuevo</li>
+    </ul>
+</div>
+
+<!-- Contenedor de tarjetas, inicialmente oculto -->
+<div class="card-container" id="tarjetas" style="display:none;">
+    <div class="card llano-grande">
+        <div class="card-content">
+            <img src="img/s.jpeg" alt="Imagen 1" class="front">
+            <img src="img/s.jpg" alt="Imagen de hover" class="hover-image">
         </div>
+        <a href="pagina1.html" class="button">Ver Más</a>
+    </div>
+
+    <div class="card rancho-nuevo">
+        <div class="card-content">
+            <img src="img/rn.jpeg" alt="Imagen 2" class="front">
+            <img src="img/rn.jpg" alt="Imagen de hover" class="hover-image">
+        </div>
+        <a href="RANCHONUEVO/index.html" class="button">Ver Más</a>
+    </div>
+
+    <div class="card maguey">
+        <div class="card-content">
+            <img src="img/aaaa.jpg" alt="Imagen 3" class="front">
+            <img src="img/aaaa.jpg" alt="Imagen de hover" class="hover-image">
+        </div>
+        <a href="MAGUEY/index.html" class="button">Ver Más</a>
     </div>
 </div>
 
-    <div class="tira"></div> <!-- Nueva sección para la tira de imagen -->
 
-<!-- Pie de página -->
+
+<div class="tira"></div> 
+
+
+
   <footer>
     <div class="footer-container">
       <div class="footer-section">
@@ -87,7 +103,7 @@
       <div class="footer-section">
         <h3>Contáctanos</h3>
         <ul>
-          <li><strong>Teléfono:</strong> 954 55 3 7006/li>
+          <li><strong>Teléfono:</strong> 954 55 3 7006</li>
           <li><strong>Correo Electrónico:</strong> llanogrande@gmail.com</li>
           <li><strong>Dirección:</strong> Calle Principal s/n, Mexico</li>
         </ul>
@@ -107,7 +123,6 @@
       <p>&copy; 2024 Gobierno de Mexico. Todos los derechos reservados.</p>
     </div>
   </footer>
-
 
 
 
@@ -140,6 +155,47 @@ buttons.forEach(button => {
 
 // Inicializar el banner mostrando la primera imagen
 changeBannerImage(0);
+
+document.getElementById('boton-imagen').addEventListener('click', function() {
+    const tarjetas = document.getElementById('tarjetas');
+    // Toggle visibility (mostrar/ocultar)
+    if (tarjetas.style.display === 'none' || tarjetas.style.display === '') {
+        tarjetas.style.display = 'flex'; // Mostrar las tarjetas
+    } else {
+        tarjetas.style.display = 'none'; // Ocultar las tarjetas
+    }
+});
+
+// Abrir y cerrar el menú al hacer clic en el botón
+document.getElementById('boton-imagen').addEventListener('click', function() {
+    var menu = document.getElementById('menu');
+    var tarjetas = document.getElementById('tarjetas');
+
+    // Toggle (mostrar/ocultar) el menú
+    menu.style.display = (menu.style.display === 'none') ? 'block' : 'none';
+    
+    // Al mostrar el menú, mostramos el contenedor de tarjetas con una animación
+    if (menu.style.display === 'block') {
+        tarjetas.style.display = 'flex';
+        setTimeout(() => {
+            tarjetas.style.opacity = '1'; // Hacemos que las tarjetas aparezcan
+        }, 50);
+    } else {
+        tarjetas.style.display = 'none';
+        tarjetas.style.opacity = '0'; // Ocultamos las tarjetas si se cierra el menú
+    }
+});
+
+// Mostrar las tarjetas correspondientes al pasar el cursor sobre una opción del menú
+var menuItems = document.querySelectorAll('.menu-item');
+menuItems.forEach(function(item) {
+    item.addEventListener('mouseenter', function() {
+        var target = item.getAttribute('data-target');
+        var tarjetas = document.getElementById('tarjetas');
+        tarjetas.className = ''; // Limpiar clases previas
+        tarjetas.classList.add('show-' + target); // Mostrar las tarjetas correspondientes
+    });
+});
 
 </script>
 
