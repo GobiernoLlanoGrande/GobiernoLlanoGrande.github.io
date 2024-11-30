@@ -458,13 +458,12 @@ li:hover ul {
             opacity: 1; 
         }
 
-                .button {
+            .button {
             display: inline-block;
             padding: 10px 20px;
             border-radius: 25px;
             background-color: green;
             color: white;
-            text-align: center;
             text-decoration: none;
             margin-top: 10px;
             transition: background-color 0.3s;
@@ -535,12 +534,13 @@ li:hover ul {
 }
 
 
+
 .tira {
-    background-image: url('img/tira.jpg'); 
+    background-image: url('img/tira.jpeg'); 
     background-repeat: repeat-x; 
-    height: 50px; 
+    height: 25px; 
     width: 100%; 
-    background-size: 32% 100%; 
+    background-size: auto 100%;  /* Mantiene el ancho original de la imagen y ajusta la altura al 100% */
     margin-bottom: 0px; 
 }
 
@@ -633,46 +633,11 @@ footer {
 
 
 
-
-/* Estilos generales */
-.brillo-menu-container {
-    position: relative;
-    display: inline-block;
-    width: 100%;  /* Asegura que el contenedor ocupe el 100% del ancho disponible */
-}
-
-.brillo-img {
-    width: 70px;
-    transition: opacity 0.3s ease;
-}
-
-/* Menú que contiene las tarjetas */
-.menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 30%;  /* Asegura que el menú ocupe el 100% del ancho disponible */
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    box-sizing: border-box;
-    z-index: 10;
-}
-
 .card-container {
     display: flex;
-    justify-content: space-around;  /* Espacio entre las tarjetas */
-    gap: 20px;  /* Aumentar el espacio entre las tarjetas */
-    flex-wrap: wrap;  /* Permite que las tarjetas se ajusten en múltiples líneas si es necesario */
-}
-
-.card {
-    width: 30%;  /* Ancho de la tarjeta */
-    background-color: rgba(0, 0, 0, 0.8);
-    border-radius: 8px;
-    overflow: hidden;
-    transition: transform 0.3s ease-in-out;
-    box-sizing: border-box;
+    flex-direction: column;  /* Coloca las tarjetas en una columna */
+    align-items: flex-start; /* Alinea las tarjetas a la izquierda */
+    gap: 30px;  /* Aumenta el espacio entre las tarjetas */
 }
 
 .card:hover {
@@ -691,13 +656,70 @@ footer {
 
 
 
-
-
-/* Mostrar el menú al pasar el cursor sobre la imagen */
-.brillo-menu-container:hover .brillo-img {
-    opacity: 0.7;  /* Brillo de la imagen al pasar el cursor */
+/* Estilos para el menú */
+.menu {
+    background-color: rgba(121,11,10, 0.8); /* Fondo semi vino */
+    position: absolute;
+    top: 65%;  /* Despliega el menú justo debajo del botón */
+    left: 10%;
+    transform: translateX(-50%); /* Centra el menú debajo del botón */
+    width: 200px;
+    padding: 10px;
+    border-radius: 8px;
+    z-index: 100;  /* Asegura que el menú esté por encima del contenido */
 }
 
-.brillo-menu-container:hover .menu {
-    display: block;  /* Muestra el menú con las tarjetas */
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
+
+.menu-item {
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+
+
+
+.llano-grande, .rancho-nuevo, .maguey {
+    display: none; /* Por defecto ocultar todas las tarjetas */
+}
+
+/* Mostrar tarjetas cuando la opción está activa */
+.show-llano-grande .llano-grande,
+.show-rancho-nuevo .rancho-nuevo,
+.show-maguey .maguey {
+    display: block;
+    opacity: 1; /* Hacer las tarjetas visibles */
+    transform: translateY(0); /* Moverlas a su posición original */
+    z-index: 1; /* Traer las tarjetas al frente */
+}
+
+/* Estilos para el botón con solo imagen */
+.boton-imagen {
+    cursor: pointer;        
+    display: inline-block;  
+    width: 200px;           
+    height: auto;            
+    border: none;           
+    background: none;   
+    padding: 0;              
+    margin: 0;
+}
+
+/* Efecto al pasar el ratón (hover) */
+.boton-imagen:hover {
+    transform: scale(1.03);   /* Hace que la imagen crezca un poco al pasar el ratón */
+    transition: transform 0.3s ease;  /* Suaviza el cambio de tamaño */
+}
+
+
