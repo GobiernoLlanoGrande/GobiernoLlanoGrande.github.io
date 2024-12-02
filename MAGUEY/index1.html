@@ -9687,7 +9687,19 @@ h6,
 
 
 
-    
+    @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+.texto-escrito {
+    overflow: hidden;
+    border-right: .15em solid orange; /* Cambia el color y grosor del "cursor" de escritura */
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .15em; /* Espacio entre letras */
+    animation: typing 3s steps(40, end); /* Velocidad de escritura y suavidad */
+}
 
 
     
