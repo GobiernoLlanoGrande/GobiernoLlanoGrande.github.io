@@ -9687,19 +9687,6 @@ h6,
 
 
 
-    @keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
-}
-
-.texto-escrito {
-    overflow: hidden;
-    border-right: .15em solid orange; /* Cambia el color y grosor del "cursor" de escritura */
-    white-space: nowrap;
-    margin: 0 auto;
-    letter-spacing: .15em; /* Espacio entre letras */
-    animation: typing 3s steps(40, end); /* Velocidad de escritura y suavidad */
-}
 
 
     
@@ -9901,7 +9888,31 @@ z-index: -1;
     
 .ave2
     {
-background-color: red;
+.ave2 {
+    position: relative;
+    background: linear-gradient(to bottom, #2c3e50, #27ae60);
+    animation: cambiarGradiente 4s infinite;
+    padding: 20px; /* Espacio interno para el contenido */
+}
+
+@keyframes cambiarGradiente {
+    0% {
+        background: linear-gradient(to bottom, #2c3e50, #27ae60);
+    }
+    50% {
+        background: linear-gradient(to bottom, #27ae60, #2ecc71);
+    }
+    100% {
+        background: linear-gradient(to bottom, #2c3e50, #27ae60);
+    }
+}
+
+.ave2 * {
+    position: relative;
+}
+    
+    z-index: -1;
+    
 
     }
 
