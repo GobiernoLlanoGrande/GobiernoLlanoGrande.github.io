@@ -7,7 +7,26 @@
     <title>Santiago Llano Grande</title>
 </head>
 <body>
-
+<!-- Contenedor de la imagen emergente -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+   
+            <div class="popup-images">
+        <img src="img/tira2.jpeg" alt="Bienvenido" class="popup-image">
+        <img src="img/tira2.jpeg" alt="Bienvenido" class="popup-image">
+    </div>
+            <img src="img/brillo.png" width="80px"id="close-btn" class="close-btn">
+            <div class="popup-text">
+                <br><br>
+                <h1>Bienvenido</h1>
+                <h5>Aquí podrás consultar todos tus trámites y servicios <br>que te ofrece nuestro municipio de Santiago Llano Grande.</h5>
+                <div class="popup-images">
+        <img src="img/tira.jpeg" alt="Bienvenido" class="popup-image">
+        <img src="img/tira.jpeg" alt="Bienvenido" class="popup-image">
+    </div>
+            </div>
+        </div>
+    </div>
     
 
 <div class="linea">
@@ -20,10 +39,10 @@
 
 <div class="banner" id="banner">
     <div class="banner-images-wrapper">
-        <img src="img/banner22.png" alt="Banner 1" class="banner-image">
-        <img src="img/banner3.png" alt="Banner 2" class="banner-image">
-        <img src="img/banner4.jpg" alt="Banner 3" class="banner-image">
-        <img src="img/banner5.jpg" alt="Banner 4" class="banner-image">
+        <img src="img/banner1.jpg" alt="Banner 1" class="banner-image">
+        <img src="img/banner2.png" alt="Banner 2" class="banner-image">
+        <img src="img/banner3.jpeg" alt="Banner 3" class="banner-image">
+        <img src="img/banner4.jpeg" alt="Banner 4" class="banner-image">
     </div>
 
     <div class="banner-buttons">
@@ -49,11 +68,21 @@
 <!-- Menú de fondo semi vino que aparece al hacer clic -->
 <div class="menu" id="menu" style="display: none;">
     <ul>
-        <li class="menu-item" data-target="llano-grande">Llano Grande</li>
-        <li class="menu-item" data-target="maguey">Maguey</li>
-        <li class="menu-item" data-target="rancho-nuevo">Rancho Nuevo</li>
+        <li class="menu-item" data-target="llano-grande">
+            Llano Grande
+            <img src="img/s.jpeg" alt="Imagen de Llano Grande" class="menu-image">
+        </li>
+        <li class="menu-item" data-target="maguey">
+            Maguey
+            <img src="img/rn.jpeg" alt="Imagen de Maguey" class="menu-image">
+        </li>
+        <li class="menu-item" data-target="rancho-nuevo">
+            Rancho Nuevo
+            <img src="img/aaaa.jpg" alt="Imagen de Rancho Nuevo" class="menu-image">
+        </li>
     </ul>
 </div>
+
 
 <!-- Contenedor de tarjetas, inicialmente oculto -->
 <div class="card-container" id="tarjetas" style="display:none;">
@@ -78,16 +107,52 @@
             <img src="img/aaaa.jpg" alt="Imagen 3" class="front">
             <img src="img/aaaa.jpg" alt="Imagen de hover" class="hover-image">
         </div>
-        <a href="MAGUEY/index1.html" class="button">Ver Más</a>
+        <a href="MAGUEY/index.html" class="button">Ver Más</a>
     </div>
 </div>
 
+<div class="contenedor-principal">
+    <!-- Contenedor para la imagen con enlace -->
+    <div class="contenedor" onclick="window.location.href='https://www.ejemplo.com';">
+      <img src="img/diablos1.jpeg" alt="Imagen 1">
+      <p>Santiago Llano Grande</p>
+    </div>
 
+    <!-- Contenedor para el anuncio o comercial -->
+    <div class="contenedor" onclick="window.location.href='https://www.ejemplo.com';">
+      <img src="img/noche.jpeg" alt="Comercial">
+      <p>Santiago Llano Grande</p>
+    </div>
+  </div>
+
+  <div class="contenedor-principal">
+    <!-- Contenedor para la imagen con enlace -->
+    <div class="contenedor" onclick="window.location.href='https://www.ejemplo.com';">
+      <img src="img/diablos1.jpeg" alt="Imagen 1">
+      <p>San Francisco El Maguey</p>
+    </div>
+
+    <!-- Contenedor para el anuncio o comercial -->
+    <div class="contenedor" onclick="window.location.href='https://www.ejemplo.com';">
+      <img src="img/noche.jpeg" alt="Comercial">
+      <p>San Francisco El Maguey</p>
+    </div>
+  </div>
+ <div class="contenedor-principal">
+    <!-- Contenedor para la imagen con enlace -->
+    <div class="contenedor" onclick="window.location.href='https://www.ejemplo.com';">
+      <img src="img/iglesia.jpeg" alt="Imagen 1">
+      <p>Rancho Nuevo</p>
+    </div>
+
+    <!-- Contenedor para el anuncio o comercial -->
+    <div class="contenedor" onclick="window.location.href='https://www.ejemplo.com';">
+      <img src="img/rancho2.jpeg" alt="Comercial">
+      <p>Rancho Nuevo</p>
+    </div>
+  </div>
 
 <div class="tira"></div> 
-
-
-
   <footer>
     <div class="footer-container">
       <div class="footer-section">
@@ -186,16 +251,45 @@ document.getElementById('boton-imagen').addEventListener('click', function() {
     }
 });
 
-// Mostrar las tarjetas correspondientes al pasar el cursor sobre una opción del menú
-var menuItems = document.querySelectorAll('.menu-item');
-menuItems.forEach(function(item) {
+document.querySelectorAll('.menu-item').forEach(item => {
     item.addEventListener('mouseenter', function() {
-        var target = item.getAttribute('data-target');
-        var tarjetas = document.getElementById('tarjetas');
-        tarjetas.className = ''; // Limpiar clases previas
-        tarjetas.classList.add('show-' + target); // Mostrar las tarjetas correspondientes
+        const target = this.getAttribute('data-target');
+        
+        // Mostrar el contenedor de tarjetas
+        document.getElementById('tarjetas').style.display = 'flex';
+
+        // Ocultar todas las tarjetas
+        document.querySelectorAll('.card').forEach(card => {
+            card.style.display = 'none';
+            card.style.transform = 'translateX(-100%) scale(0)';
+            card.style.opacity = 0;
+        });
+
+        // Mostrar la tarjeta correspondiente con deslizamiento
+        const targetCard = document.querySelector(`.${target}`);
+        targetCard.style.display = 'block';
+        targetCard.style.transform = 'translateX(0) scale(1)';
+        targetCard.style.opacity = 1;
     });
 });
+
+
+
+// Obtener los elementos
+const popup = document.getElementById('popup');
+const closeBtn = document.getElementById('close-btn');
+
+// Mostrar la imagen emergente después de cargar la página
+window.onload = function() {
+    popup.style.visibility = 'visible';
+};
+
+// Cerrar la imagen emergente cuando se hace clic en el botón de cerrar
+closeBtn.onclick = function() {
+    popup.style.visibility = 'hidden';
+};
+
+
 
 </script>
 
