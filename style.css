@@ -1,13 +1,15 @@
 
 body {
     
-    background-color: white;
+    background-image: url('img/fondo2.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     margin: 0;
     font-family: Arial, sans-serif;
+ animation: glowing 3s infinite alternate; /* Animación de brillo */
 }
+
 
 .fija {
     z-index: 0;
@@ -137,6 +139,11 @@ h1 {
 }
 
 .linea {
+
+    position: -webkit-sticky; /* Para compatibilidad con Safari */
+    position: sticky;
+    top: 0; /* Esto lo hace quedarse en la parte superior al hacer scroll */
+    z-index: 1000;
     justify-content: center;
     background-image:url('img/cinta2.jpg'); 
     overflow: hidden;
@@ -298,6 +305,7 @@ li:hover ul {
     perspective: 1000px;
 }
 
+
 .card-content {
     position: relative;
     width: 300px;
@@ -389,8 +397,31 @@ li:hover ul {
     display: flex;
     flex-direction: column; 
     align-items: center;  
+    box-shadow: 0 0 25px 10px rgba(121, 11, 10, 0.6), 
+                0 0 30px 15px rgba(255, 255, 255, 0.5); /* Efecto de sombra holográfica */
+    backdrop-filter: blur(8px); /* Fondo desenfocado para el efecto de proyección */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Borde suave */
+    position: relative;
+    overflow: hidden; /* Para asegurarse que el contenido no se desborde durante la animación */
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
+
 }
 
+/* Animación de resplandor para el efecto holográfico */
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 25px 10px rgba(121, 11, 10, 0.6), 
+                    0 0 30px 15px rgba(255, 255, 255, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 40px 15px rgba(121, 11, 10, 0.8), 
+                    0 0 45px 25px rgba(255, 255, 255, 0.8);
+    }
+    100% {
+        box-shadow: 0 0 25px 10px rgba(121, 11, 10, 0.6), 
+                    0 0 30px 15px rgba(255, 255, 255, 0.5);
+    }
+}
 .card-content {
     position: relative;
     width: 100%;
@@ -459,6 +490,7 @@ li:hover ul {
         }
 
             .button {
+
             display: inline-block;
             padding: 10px 20px;
             border-radius: 25px;
@@ -466,6 +498,7 @@ li:hover ul {
             color: white;
             text-decoration: none;
             margin-top: 10px;
+            margin-left: 35%;
             transition: background-color 0.3s;
         }
 
@@ -517,10 +550,18 @@ li:hover ul {
         padding: 5px;  
     }
 
+   /* Cartas: Mostrar en el centro de la páginaaaaaaaaaaaaaaa */
     .card-container {
         flex-direction: column;  
         align-items: center;
+        /* Cartas: Mostrar en el centro de la página */
+    display: flex;
+    justify-content: center;
+    height: 100vh; /* Utiliza toda la altura de la ventana */
+    gap: 20px;
+    display: none; /* Por defecto, ocultar el contenedor */
     }
+
 
     .card-content {
         width: 90%;  
@@ -528,6 +569,7 @@ li:hover ul {
     }
 
     .button {
+
         width: 100%;
         text-align: center;
     }
@@ -633,12 +675,7 @@ footer {
 
 
 
-.card-container {
-    display: flex;
-    flex-direction: column;  /* Coloca las tarjetas en una columna */
-    align-items: flex-start; /* Alinea las tarjetas a la izquierda */
-    gap: 30px;  /* Aumenta el espacio entre las tarjetas */
-}
+
 
 .card:hover {
     transform: scale(1.05);  /* Aumenta el tamaño de la tarjeta al pasar el cursor */
@@ -658,37 +695,73 @@ footer {
 
 /* Estilos para el menú */
 .menu {
-    background-color: rgba(121,11,10, 0.8); /* Fondo semi vino */
+ filter: blur(1px); /* Aplica el efecto de desenfoque */
+    transition: filter 0.3s ease; /* Transición suave para el desenfoque */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra suave */
     position: absolute;
     top: 65%;  /* Despliega el menú justo debajo del botón */
     left: 10%;
     transform: translateX(-50%); /* Centra el menú debajo del botón */
-    width: 200px;
+    width: 150px;
     padding: 10px;
     border-radius: 8px;
     z-index: 100;  /* Asegura que el menú esté por encima del contenido */
 }
-
+.menu:hover {
+    filter: blur(0px); /* Elimina el desenfoque cuando el ratón pasa sobre la imagen */
+}
 .menu ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
+/* Imagen que se mueve con la animación */
+.menu-image {
+    position: absolute;
+    top: 50%;  /* Alinea la imagen en el centro verticalmente de cada ítem */
+    left: 50%;
+    transform: translate(-50%, -50%);  /* Centra la imagen en el ítem */
+    width: 50px; /* Tamaño inicial de la imagen */
+    height: auto;
+    opacity: 0; /* Imagen invisible por defecto */
+    pointer-events: none; /* Desactiva la interacción con la imagen */
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
 
 .menu-item {
-    color: white;
+    color: #830808;
     padding: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+}
+/* Estilo de hover sobre el ítem del menú */
+.menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Animación de la imagen al hacer hover */
+.menu-item:hover .menu-image {
+    opacity: 1; /* Imagen visible */
+    animation: moveToCenter 1s forwards ease-in-out; /* Animación para mover la imagen */
+}
+
+/* Animación de la imagen moviéndose al centro */
+@keyframes moveToCenter {
+    0% {
+        transform: translate(-50%, -50%); /* Empieza en la posición original del ítem */
+        opacity: 1; /* Imagen visible */
+        width: 50px; /* Tamaño inicial */
+    }
+    100% {
+        transform: translate(calc(50vw - 50%), calc(50vh - 50%)); /* Mueve la imagen al centro de la pantalla */
+        opacity: 0; /* Desaparece la imagen mientras se mueve */
+        width: 100px; /* La imagen se estira a un tamaño mayor */
+    }
 }
 
 .menu-item:hover {
     background-color: rgba(255, 255, 255, 0.2);
 }
-
-
-
-
 
 .llano-grande, .rancho-nuevo, .maguey {
     display: none; /* Por defecto ocultar todas las tarjetas */
@@ -698,6 +771,7 @@ footer {
 .show-llano-grande .llano-grande,
 .show-rancho-nuevo .rancho-nuevo,
 .show-maguey .maguey {
+   
     display: block;
     opacity: 1; /* Hacer las tarjetas visibles */
     transform: translateY(0); /* Moverlas a su posición original */
@@ -722,4 +796,126 @@ footer {
     transition: transform 0.3s ease;  /* Suaviza el cambio de tamaño */
 }
 
+/* Estilos para el fondo oscuro y la imagen emergente */
+.popup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Fondo oscuro */
+    z-index: 1000; /* Para que esté por encima del contenido */
+    visibility: hidden; /* Inicialmente está oculto */
+}
 
+.popup-content {
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    max-width: 40%;
+    max-height: 50%;
+    position: relative; /* Permite que la "X" se posicione sobre el contenedor */
+    overflow: hidden; /* Oculta las partes de la imagen que salen fuera del contenedor */
+}
+
+.popup-images {
+    display: flex;
+    width: 200%; /* Hacemos que el contenedor sea dos veces más ancho que el contenido visible */
+    animation: moveLeftRight 10s linear infinite; /* La animación se mueve de izquierda a derecha */
+}
+
+.popup-image {
+    width: 50%; /* Cada imagen ocupará la mitad del contenedor */
+    height: auto;
+}
+
+@keyframes moveLeftRight {
+    0% {
+        transform: translateX(0); /* Empieza en la posición original */
+    }
+    100% {
+        transform: translateX(-50%); /* Mueve las imágenes completamente hacia la izquierda */
+    }
+}
+
+.popup-text {
+    margin-top: 15px;
+}
+
+.popup-text h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.popup-text p {
+    font-size: 16px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 40px;
+    right: 210px;
+    font-size: 10px;
+    color: black;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+   
+    transition: background-color 0.3s ease; /* Añadimos una transición suave */
+}
+
+
+
+
+.contenido {
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Contenedor principal que alineará los elementos a la derecha */
+.contenedor-principal {
+  display: flex;
+  margin-left: 300px;
+  gap: 110px; /* Espacio entre los contenedores */
+  padding: 20px;
+}
+
+/* Estilos generales para los contenedores */
+.contenedor {
+  width: 300px;
+  text-align: center;
+  cursor: pointer;
+  overflow: hidden; /* Asegura que no se salgan los elementos */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Estilos para las imágenes dentro de los contenedores */
+.contenedor img {
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+/* Efecto al pasar el cursor */
+.contenedor:hover {
+  transform: scale(1.05); /* Agranda el contenedor */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Aumenta la sombra */
+}
+
+/* Efecto al pasar el cursor sobre la imagen */
+.contenedor:hover img {
+  transform: scale(1.1); /* Agranda la imagen */
+}
+
+/* Estilo para el texto */
+.contenedor p {
+  padding: 10px 0;
+  color: #333;
+  font-size: 16px;
+}
