@@ -8,19 +8,7 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
  animation: glowing 3s infinite alternate; /* Animación de brillo */
-}
 
-
-.fija {
-    z-index: 0;
-}
-
-.encima-wrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 10;
 }
 
 .banner {
@@ -46,8 +34,9 @@ body {
 /* Medias Queries para pantallas pequeñas (móviles) */
 @media (max-width: 600px) {
     .encima-wrapper {
-        height: 50vw; /* En pantallas pequeñas, el banner toma el 50% del ancho de la pantalla */
+        height: 23.4375vw; /* En pantallas pequeñas, el banner toma el 50% del ancho de la pantalla */
     }
+   
 }
 
 /* Medias Queries para tabletas */
@@ -58,13 +47,11 @@ body {
 }
 
 /* Medias Queries para pantallas grandes */
-@media (min-width: 1025px) {
+@media (min-width: 1025px) and (max-width: 2000px){
     .banner {
         height: 230px; /* En pantallas grandes, mantén el tamaño original */
     }
 }
-
-
 
 .banner-buttons {
     position: absolute;
@@ -86,6 +73,10 @@ body {
     opacity: 0.7;
     transition: background-color 0.3s, opacity 0.3s;
 }
+
+
+
+
 
 .banner-button:hover {
     background-color: white;
@@ -122,22 +113,6 @@ body {
 }
 
 
-h1 {
-    color: black;
-}
-
-
-.menu-container {
-    background-color: #a0045c; 
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
-    font-family: Arial, Helvetica, sans-serif;
-    top: 10px;
-    color: white;
-    width: 100%; 
-}
-
 .linea {
 
     position: -webkit-sticky; /* Para compatibilidad con Safari */
@@ -162,6 +137,8 @@ h1 {
 .linea img {
     margin-right: 70px;
 }
+
+
 
 .linea .search-container {
     display: flex;
@@ -217,45 +194,7 @@ h1 {
   }
 }
 
-ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    background-color: transparent; 
-}
 
-li {
-    float: left;
-    margin-right: 10px;
-}
-
-li a {
-    display: block;
-    padding: 10px;
-    color: #eceaed;
-    text-decoration: none;
-}
-
-li a:hover {
-    background-color: rgba(255, 255, 255, 0.2); 
-}
-
-ul ul {
-    display: none;
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.5);
-    border: 1px solid #751d4d;
-}
-
-ul ul li {
-    display: block;
-    float: none;
-}
-
-li:hover ul {
-    display: block;
-    z-index: 2;
-}
 
 .line {
     justify-content: center;
@@ -265,7 +204,7 @@ li:hover ul {
     padding: 1px;
     color: white;
     text-decoration: none;
-    width: 98.4%;
+    width: 99.8%;
     height: 0.2px;
     background: linear-gradient(135deg, #e5b61e 50%, #fed428 50%); 
     text-align: center;
@@ -280,7 +219,7 @@ li:hover ul {
     padding: 1px;
     color: white;
     text-decoration: none;
-    width: 98.4%;
+    width: 99.8%;
     height: 1px;
     background-color: #d53468;
     text-align: center;
@@ -575,8 +514,6 @@ li:hover ul {
     }
 }
 
-
-
 .tira {
     background-image: url('img/tira.jpeg'); 
     background-repeat: repeat-x; 
@@ -586,11 +523,8 @@ li:hover ul {
     margin-bottom: 0px; 
 }
 
-
-
-
 footer {
-  background-color: #790b0a; 
+  background-color: #790b0a;
   color: white;
   padding: 20px 0;
   font-size: 14px;
@@ -607,15 +541,21 @@ footer {
 .footer-section {
   flex: 1;
   padding: 0 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .footer-section h3 {
   font-size: 18px;
   margin-bottom: 15px;
+  text-align: center;  /* Centra el título */
 }
 
 .footer-section ul {
   list-style: none;
+  text-align: center; /* Centra el contenido de la lista */
+  padding: 0;
 }
 
 .footer-section ul li {
@@ -629,11 +569,12 @@ footer {
 }
 
 .footer-section ul li a:hover {
-  color: #ffd700; 
+  color: #ffd700;
 }
 
 .social-media {
   list-style: none;
+  text-align: center;
 }
 
 .social-media li {
@@ -647,7 +588,7 @@ footer {
 }
 
 .social-media li a:hover {
-  color: #ffd700; 
+  color: #ffd700;
 }
 
 .footer-bottom {
@@ -673,6 +614,49 @@ footer {
   }
 }
 
+/* Ajustes responsivos para pantallas más pequeñas */
+@media screen and (max-width: 1024px) {
+  .footer-container {
+    justify-content: center; /* Centra los elementos en pantallas de tablet */
+  }
+
+  .footer-section {
+    padding: 10px 0;
+    text-align: center;
+    flex: 1 1 100%; /* Permite que las secciones se ajusten al 100% del ancho */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px; /* Añade padding lateral para mejor espaciado */
+  }
+
+  .footer-section {
+    padding: 10px 0;
+    text-align: center;
+    flex: 1 1 100%;
+    min-width: unset; /* Elimina el tamaño mínimo de las secciones */
+  }
+
+  .footer-bottom {
+    padding: 15px; /* Añade más espacio en la parte inferior en pantallas pequeñas */
+  }
+
+  .footer-section ul li {
+    margin-bottom: 8px; /* Reduce el margen entre los enlaces */
+  }
+
+  .footer-section ul li a {
+    font-size: 12px; /* Disminuye el tamaño de fuente en dispositivos pequeños */
+  }
+
+  .social-media li a {
+    font-size: 12px; /* Ajusta el tamaño de los íconos de redes sociales */
+  }
+}
 
 
 
@@ -869,8 +853,6 @@ footer {
 }
 
 
-
-
 .contenido {
     text-align: center;
     margin-top: 10px;
@@ -918,4 +900,34 @@ footer {
   padding: 10px 0;
   color: #333;
   font-size: 16px;
+}
+
+/* Medias Queries para hacerlo responsivo */
+
+/* Pantallas pequeñas (móviles) */
+@media screen and (max-width: 600px) {
+  .contenedor {
+    width: 100%; /* Hace que el contenedor ocupe el 100% del ancho */
+    margin: 10px 0; /* Añade márgenes para separar los elementos */
+  }
+
+  .contenedor p {
+    font-size: 14px; /* Reduce el tamaño de la fuente */
+  }
+}
+
+/* Pantallas medianas (tabletas) */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  .contenedor {
+    width: 45%; /* Hace que el contenedor ocupe el 45% del ancho */
+    margin: 15px; /* Añade márgenes entre los contenedores */
+  }
+}
+
+/* Pantallas grandes (escritorios) */
+@media screen and (min-width: 1025px) {
+  .contenedor {
+    width: 300px; /* Mantiene el ancho original en pantallas grandes */
+    margin: 20px; /* Añade márgenes entre los contenedores */
+  }
 }
