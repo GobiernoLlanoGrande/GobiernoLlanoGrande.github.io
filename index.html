@@ -40,10 +40,10 @@
 
 <div class="banner" id="banner">
     <div class="banner-images-wrapper">
-        <img src="img/banner1.jpg" alt="Banner 1" class="banner-image">
-        <img src="img/banner2.jpeg" alt="Banner 2" class="banner-image">
-        <img src="img/banner3.jpeg" alt="Banner 3" class="banner-image">
-        <img src="img/banner4.jpeg" alt="Banner 4" class="banner-image">
+        <img src="img/00.jpg" alt="Banner 1" class="banner-image">
+        <img src="img/11.jpg" alt="Banner 2" class="banner-image">
+        <img src="img/22.jpg" alt="Banner 3" class="banner-image">
+        <img src="img/33.jpg" alt="Banner 4" class="banner-image">
     </div>
 
     <div class="banner-buttons">
@@ -195,7 +195,7 @@
 
 
 <script type="text/javascript">
-    const imagesWrapper = document.querySelector('.banner-images-wrapper');
+const imagesWrapper = document.querySelector('.banner-images-wrapper');
 const buttons = document.querySelectorAll('.banner-button');
 
 // Función para cambiar la imagen del banner cuando se hace clic en un botón
@@ -206,9 +206,16 @@ function changeBannerImage(index) {
     // Activar el botón correspondiente
     buttons[index].classList.add('active');
 
-    // Mover las imágenes de banner
+    // Mover las imágenes de banner sin mostrar otras
     const offset = -index * 100;  // Desplazamiento en porcentaje para cada imagen
+    imagesWrapper.style.transition = 'none';  // Sin transición
     imagesWrapper.style.transform = `translateX(${offset}%)`;  // Aplicar el desplazamiento
+
+    // Forzar reflow para reiniciar la animación
+    void imagesWrapper.offsetWidth;  // Esto provoca un reflow
+
+    // Ahora aplicar la transición
+    imagesWrapper.style.transition = 'transform 0.5s ease';  // Agregar transición
 }
 
 // Asignar el evento click a cada botón
@@ -232,25 +239,37 @@ document.getElementById('boton-imagen').addEventListener('click', function() {
     }
 });
 
-// Abrir y cerrar el menú al hacer clic en el botón
 document.getElementById('boton-imagen').addEventListener('click', function() {
     var menu = document.getElementById('menu');
     var tarjetas = document.getElementById('tarjetas');
 
     // Toggle (mostrar/ocultar) el menú
-    menu.style.display = (menu.style.display === 'none') ? 'block' : 'none';
-    
-    // Al mostrar el menú, mostramos el contenedor de tarjetas con una animación
-    if (menu.style.display === 'block') {
+    if (menu.style.display === 'none' || menu.style.display === '') {
+        menu.style.display = 'block'; // Mostrar el menú
+        setTimeout(function() {
+            menu.classList.add('show'); // Activar la clase para mostrar el menú con animación
+        }, 0); // Retraso para que la animación de deslizamiento funcione
+
+        // Mostrar el contenedor de tarjetas con una animación de opacidad
         tarjetas.style.display = 'flex';
         setTimeout(() => {
-            tarjetas.style.opacity = '1'; // Hacemos que las tarjetas aparezcan
-        }, 50);
+            tarjetas.style.opacity = '1'; // Hacemos que las tarjetas aparezcan suavemente
+        }, 100);
     } else {
-        tarjetas.style.display = 'none';
-        tarjetas.style.opacity = '0'; // Ocultamos las tarjetas si se cierra el menú
+        // Ocultar el menú
+        menu.classList.remove('show'); // Eliminar la clase que activa la animación de deslizamiento
+        setTimeout(() => {
+            menu.style.display = 'none'; // Ocultar el menú después de la animación
+        }, 500);
+
+        // Ocultar las tarjetas
+        tarjetas.style.opacity = '0';
+        setTimeout(() => {
+            tarjetas.style.display = 'none'; // Ocultar el contenedor de tarjetas
+        }, 500);
     }
 });
+
 
 document.querySelectorAll('.menu-item').forEach(item => {
     item.addEventListener('mouseenter', function() {
