@@ -1,7 +1,7 @@
 
 body {
     
-    background-color: skyblue;
+    background-color: #fff6f9;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -22,6 +22,12 @@ body {
 .banner-images-wrapper {
     display: flex;
     transition: transform 0.5s ease-in-out;
+}
+
+
+.banner-images-wrapper img {
+    width: 100%; /* Asegúrate de que las imágenes se adapten al contenedor */
+    flex-shrink: 0; /* No se debe reducir el tamaño de las imágenes */
 }
 
 .banner-image {
@@ -61,6 +67,7 @@ body {
     gap: 10px; 
     flex-direction: row; 
     z-index: 20;
+    
 }
 
 .banner-button {
@@ -679,18 +686,28 @@ footer {
 
 /* Estilos para el menú */
 .menu {
- filter: blur(1px); /* Aplica el efecto de desenfoque */
-    transition: filter 0.3s ease; /* Transición suave para el desenfoque */
+display: none; /* Oculto por defecto */
+    filter: blur(0px); /* Aplica el efecto de desenfoque */
+    transition: filter 0.3s ease, max-height 0.5s ease; /* Transición suave para el desenfoque y la animación de altura */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra suave */
     position: absolute;
-    top: 65%;  /* Despliega el menú justo debajo del botón */
+    top: 65%; /* Despliega el menú justo debajo del botón */
     left: 10%;
     transform: translateX(-50%); /* Centra el menú debajo del botón */
     width: 150px;
     padding: 10px;
     border-radius: 8px;
-    z-index: 100;  /* Asegura que el menú esté por encima del contenido */
+    z-index: 100; /* Asegura que el menú esté por encima del contenido */
+    max-height: 0; /* Inicialmente no tiene altura */
+    overflow: hidden; /* Oculta contenido extra mientras se anima */
 }
+
+/* Mostrar el menú cuando se activa */
+.menu.show {
+    display: block; /* Mostrar el menú cuando se activa */
+    max-height: 300px; /* Altura máxima cuando el menú se despliega */
+}
+
 .menu:hover {
     filter: blur(0px); /* Elimina el desenfoque cuando el ratón pasa sobre la imagen */
 }
@@ -718,30 +735,7 @@ footer {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
-/* Estilo de hover sobre el ítem del menú */
-.menu-item:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-}
 
-/* Animación de la imagen al hacer hover */
-.menu-item:hover .menu-image {
-    opacity: 1; /* Imagen visible */
-    animation: moveToCenter 1s forwards ease-in-out; /* Animación para mover la imagen */
-}
-
-/* Animación de la imagen moviéndose al centro */
-@keyframes moveToCenter {
-    0% {
-        transform: translate(-50%, -50%); /* Empieza en la posición original del ítem */
-        opacity: 1; /* Imagen visible */
-        width: 50px; /* Tamaño inicial */
-    }
-    100% {
-        transform: translate(calc(50vw - 50%), calc(50vh - 50%)); /* Mueve la imagen al centro de la pantalla */
-        opacity: 0; /* Desaparece la imagen mientras se mueve */
-        width: 100px; /* La imagen se estira a un tamaño mayor */
-    }
-}
 
 .menu-item:hover {
     background-color: rgba(255, 255, 255, 0.2);
