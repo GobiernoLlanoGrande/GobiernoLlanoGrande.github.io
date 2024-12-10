@@ -835,8 +835,8 @@ display: none; /* Oculto por defecto */
 
 .close-btn {
     position: absolute;
-    top: 40px;
-    right: 210px;
+    top: 60px;
+    right: 230px;
     font-size: 10px;
     color: black;
     border: none;
@@ -847,15 +847,115 @@ display: none; /* Oculto por defecto */
 }
 
 
+/* Media queries para hacer el diseño responsive */
+
+/* Pantallas pequeñas (teléfonos móviles) */
+@media (max-width: 600px) {
+    .popup-content {
+        max-width: 90%; /* Se ajusta para ocupar más espacio en pantallas pequeñas */
+        max-height: 80%; /* Aumenta el alto en pantallas pequeñas */
+        padding: 15px; /* Reduce el padding */
+    }
+
+    .popup-text h1 {
+        font-size: 20px; /* Reduce el tamaño del título */
+    }
+
+    .popup-text h5 {
+        font-size: 14px; /* Reduce el tamaño del texto */
+    }
+
+    .popup-image {
+        width: 100%; /* Las imágenes ocupan todo el ancho del contenedor */
+    }
+
+    .popup-images {
+        width: 100%; /* Ajustamos el ancho del contenedor */
+        animation: none; /* Desactivamos la animación en pantallas pequeñas */
+    }
+
+    .close-btn {
+        top: 10px;
+        right: 10px;
+    }
+}
+
+/* Pantallas medianas (tabletas, etc.) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .popup-content {
+        max-width: 70%; /* Se ajusta para ocupar un 70% del ancho */
+        max-height: 60%; /* Ajusta el alto a un 60% */
+        padding: 20px; /* Espaciado adecuado */
+    }
+
+    .popup-text h1 {
+        font-size: 22px; /* Título más grande */
+    }
+
+    .popup-text h5 {
+        font-size: 16px; /* Texto más grande */
+    }
+
+    .popup-image {
+        width: 50%; /* Las imágenes ocupan la mitad del contenedor */
+    }
+
+    .popup-images {
+        width: 200%; /* Hacemos que el contenedor sea dos veces más ancho */
+        animation: moveLeftRight 10s linear infinite; /* La animación se mueve de izquierda a derecha */
+    }
+}
+
+/* Pantallas grandes (computadoras de escritorio) */
+@media (min-width: 1025px) {
+    /* Mantén el diseño actual sin cambios para pantallas grandes (PCs) */
+    .popup-content {
+        max-width: 40%; /* Mantiene el tamaño en pantallas grandes */
+        max-height: 50%;
+        padding: 30px; /* Padding más grande para pantallas grandes */
+    }
+
+    .popup-text h1 {
+        font-size: 24px; /* Título grande */
+    }
+
+    .popup-text h5 {
+        font-size: 18px; /* Texto más grande */
+    }
+
+    .popup-image {
+        width: 50%; /* Las imágenes ocupan la mitad del contenedor */
+    }
+
+    .popup-images {
+        width: 200%; /* Contenedor dos veces más ancho */
+        animation: moveLeftRight 10s linear infinite; /* Animación en pantallas grandes */
+    }
+}
 .contenido {
     text-align: center;
     margin-top: 10px;
 }
 
+
+
+/* Estilos generales para los contenedores */
+.contenedor {
+  width: 300px;
+  text-align: center;
+  cursor: pointer;
+  overflow: hidden; /* Asegura que no se salgan los elementos */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
 /* Contenedor principal que alineará los elementos a la derecha */
 .contenedor-principal {
   display: flex;
-  margin-left: 300px;
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+  justify-content: center; /* Alinea los elementos en el centro */
   gap: 110px; /* Espacio entre los contenedores */
   padding: 20px;
 }
@@ -869,6 +969,7 @@ display: none; /* Oculto por defecto */
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 20px; /* Añadir espacio inferior */
 }
 
 /* Estilos para las imágenes dentro de los contenedores */
@@ -896,32 +997,41 @@ display: none; /* Oculto por defecto */
   font-size: 16px;
 }
 
-/* Medias Queries para hacerlo responsivo */
+/* Media Queries para dispositivos pequeños */
+@media (max-width: 1200px) {
+  .contenedor-principal {
+    gap: 40px; /* Reduce el espacio entre los elementos */
+  }
 
-/* Pantallas pequeñas (móviles) */
-@media screen and (max-width: 600px) {
   .contenedor {
-    width: 100%; /* Hace que el contenedor ocupe el 100% del ancho */
-    margin: 10px 0; /* Añade márgenes para separar los elementos */
+    width: 250px; /* Ajusta el tamaño de los contenedores */
+  }
+}
+
+/* Media Queries para dispositivos de tamaño medio (tablets y pantallas más pequeñas) */
+@media (max-width: 768px) {
+  .contenedor-principal {
+    gap: 20px; /* Menos espacio entre los elementos */
+  }
+
+  .contenedor {
+    width: 200px; /* Ajusta el tamaño de los contenedores */
+  }
+}
+
+/* Media Queries para dispositivos móviles */
+@media (max-width: 480px) {
+  .contenedor-principal {
+    gap: 10px; /* Muy poco espacio entre los elementos */
+    padding: 40px; /* Menos espacio alrededor */
+  }
+
+  .contenedor {
+    width: 100%; /* Contenedores ocupan el 100% de la pantalla */
+    margin-bottom: 15px; /* Espacio inferior entre los elementos */
   }
 
   .contenedor p {
-    font-size: 14px; /* Reduce el tamaño de la fuente */
-  }
-}
-
-/* Pantallas medianas (tabletas) */
-@media screen and (min-width: 601px) and (max-width: 1024px) {
-  .contenedor {
-    width: 45%; /* Hace que el contenedor ocupe el 45% del ancho */
-    margin: 15px; /* Añade márgenes entre los contenedores */
-  }
-}
-
-/* Pantallas grandes (escritorios) */
-@media screen and (min-width: 1025px) {
-  .contenedor {
-    width: 300px; /* Mantiene el ancho original en pantallas grandes */
-    margin: 20px; /* Añade márgenes entre los contenedores */
+    font-size: 14px; /* Ajusta el tamaño de la fuente */
   }
 }
