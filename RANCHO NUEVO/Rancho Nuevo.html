@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Rancho Nuevo</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -17,19 +16,22 @@
         </div>
     </div>
     <!-- Banner de imagen -->
-    <header class="banner">
-        <img src="img/banner1.jpg" alt="Banner de la página">
-    </header>
+    <div class="banner-container">
+        <img src="img/banner1.jpg" alt="Banner de la página" class="banner-img active">
+        <img src="img/banner4.jpg" alt="Banner de la página" class="banner-img">
+        <img src="img/banner5.jpg" alt="Banner de la página" class="banner-img">
+
+
+    </div>
 
     <!-- Menú de navegación -->
     <nav class="navbar">
         <ul>
-            <li><a href="index.html">Inicio</a></li>
+            <li><a href="#home">Inicio</a></li>
             <li><a href="Acerca.html">Acerca de</a></li>
             <li><a href="servicios.html">Servicios</a></li>
-            
             <li><a href="noticias.html">Noticias</a></li>
-            <li><a href="Tramites.html">Tramites</a></li>
+            <li><a href="Directorio.html">Tramites</a></li>
         </ul>
     </nav>
 
@@ -39,8 +41,17 @@
             <h1>Bienvenido a mi página</h1>
             <p>Este es el contenido principal de la página de inicio.</p>
 
-            <img src="img/igle1.jpg" alt="Banner de la página"></center>
+            
         </section>
+        <div class="menu-container">
+        <ul class="menu">
+            <li><a href="#"><img src="img/igle1.jpg" alt="Imagen 1" class="menu-item"></a></li>
+            <li><a href="#"><img src="img/clinica.jpg" alt="Imagen 2" class="menu-item"></a></li>
+            <li><a href="#"><img src="img/palacio.jpg" alt="Imagen 3" class="menu-item"></a></li>
+            
+        </ul>
+    </div>
+
 
     </main>
 
@@ -51,6 +62,23 @@
        <p>Puedes contactarnos en WhatsaApp <br>
         Puedes segirnos en nuestras redes sociales</p>
     </footer>
+    <script>
+        // JavaScript para cambiar las imágenes del banner dinámicamente
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.banner-img');
+
+        function showNextImage() {
+            // Eliminar la clase 'active' de la imagen actual
+            images[currentIndex].classList.remove('active');
+            // Avanzar al siguiente índice
+            currentIndex = (currentIndex + 1) % images.length;
+            // Agregar la clase 'active' a la siguiente imagen
+            images[currentIndex].classList.add('active');
+        }
+
+        // Cambiar de imagen cada 3 segundos
+        setInterval(showNextImage, 3000);
+    </script>
 
 </body>
 </html>
