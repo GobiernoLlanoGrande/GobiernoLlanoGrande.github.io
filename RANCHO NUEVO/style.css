@@ -9,14 +9,28 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Estilo del banner */
-.banner img {
-    width: 100%;
-    height: auto;
-}
-
+/* Contenedor del banner */
+        .banner-container {
+            width: 100%;
+            height: 275px;
+            overflow: hidden;
+            position: relative;
+        }
+.banner-img {
+            width: 100%;
+            height: auto;
+            position: absolute;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+.banner-img.active {
+            opacity: 1;
+        }
 /* Estilo del menú de navegación */
 .navbar {
     background-color: #910909;
@@ -80,7 +94,7 @@ footer {
     padding: 10px;
     color: white;
     text-decoration: none;
-    width: 98.55%;
+    width: 100%;
     height: $=px;
 }
 
@@ -113,3 +127,25 @@ footer {
 .linea .search-container button:hover {
     background-color: #dcdcdc;
 }
+
+/* Contenedor principal del menú */
+.menu-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Estilo de la lista de menú */
+.menu {
+    list-style-type: none;
+    display: flex;
+    padding: 100;
+    margin: 100;
+}
+
+/* Estilo de cada elemento de la lista (imagen) */
+.menu li {
+    margin: 0 25px;
+}
+
