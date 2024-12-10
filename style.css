@@ -246,7 +246,7 @@ body {
     position: relative;
     width: 70%;  /* El contenedor ocupa el 100% del ancho disponible */
     height: 0;
-    padding-bottom: 56.25%;  /* Esto mantiene la relación de aspecto 16:9 (100 / 16 * 9 = 56.25%) */
+    padding-bottom: 30%;  /* Esto mantiene la relación de aspecto 16:9 (100 / 16 * 9 = 56.25%) */
     overflow: hidden;
 }
 
