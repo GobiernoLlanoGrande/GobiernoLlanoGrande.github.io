@@ -835,8 +835,8 @@ display: none; /* Oculto por defecto */
 
 .close-btn {
     position: absolute;
-    top: 60px;
-    right: 230px;
+    top: 40px;
+    right: 200px;
     font-size: 10px;
     color: black;
     border: none;
@@ -847,91 +847,9 @@ display: none; /* Oculto por defecto */
 }
 
 
-/* Media queries para hacer el diseño responsive */
 
-/* Pantallas pequeñas (teléfonos móviles) */
-@media (max-width: 600px) {
-    .popup-content {
-        max-width: 90%; /* Se ajusta para ocupar más espacio en pantallas pequeñas */
-        max-height: 80%; /* Aumenta el alto en pantallas pequeñas */
-        padding: 15px; /* Reduce el padding */
-    }
 
-    .popup-text h1 {
-        font-size: 20px; /* Reduce el tamaño del título */
-    }
 
-    .popup-text h5 {
-        font-size: 14px; /* Reduce el tamaño del texto */
-    }
-
-    .popup-image {
-        width: 100%; /* Las imágenes ocupan todo el ancho del contenedor */
-    }
-
-    .popup-images {
-        width: 100%; /* Ajustamos el ancho del contenedor */
-        animation: none; /* Desactivamos la animación en pantallas pequeñas */
-    }
-
-    .close-btn {
-        top: 10px;
-        right: 10px;
-    }
-}
-
-/* Pantallas medianas (tabletas, etc.) */
-@media (min-width: 601px) and (max-width: 1024px) {
-    .popup-content {
-        max-width: 70%; /* Se ajusta para ocupar un 70% del ancho */
-        max-height: 60%; /* Ajusta el alto a un 60% */
-        padding: 20px; /* Espaciado adecuado */
-    }
-
-    .popup-text h1 {
-        font-size: 22px; /* Título más grande */
-    }
-
-    .popup-text h5 {
-        font-size: 16px; /* Texto más grande */
-    }
-
-    .popup-image {
-        width: 50%; /* Las imágenes ocupan la mitad del contenedor */
-    }
-
-    .popup-images {
-        width: 200%; /* Hacemos que el contenedor sea dos veces más ancho */
-        animation: moveLeftRight 10s linear infinite; /* La animación se mueve de izquierda a derecha */
-    }
-}
-
-/* Pantallas grandes (computadoras de escritorio) */
-@media (min-width: 1025px) {
-    /* Mantén el diseño actual sin cambios para pantallas grandes (PCs) */
-    .popup-content {
-        max-width: 40%; /* Mantiene el tamaño en pantallas grandes */
-        max-height: 50%;
-        padding: 30px; /* Padding más grande para pantallas grandes */
-    }
-
-    .popup-text h1 {
-        font-size: 24px; /* Título grande */
-    }
-
-    .popup-text h5 {
-        font-size: 18px; /* Texto más grande */
-    }
-
-    .popup-image {
-        width: 50%; /* Las imágenes ocupan la mitad del contenedor */
-    }
-
-    .popup-images {
-        width: 200%; /* Contenedor dos veces más ancho */
-        animation: moveLeftRight 10s linear infinite; /* Animación en pantallas grandes */
-    }
-}
 .contenido {
     text-align: center;
     margin-top: 10px;
