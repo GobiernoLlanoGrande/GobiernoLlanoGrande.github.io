@@ -858,19 +858,80 @@ display: none; /* Oculto por defecto */
 
 .close-btn {
     position: absolute;
-    top: 40px;
-    right: 200px;
+    top: 5vh; /* La distancia desde el borde superior es el 5% del alto de la ventana */
+    left: 50%; /* Centra horizontalmente */
+    transform: translateX(-50%); /* Ajusta la posición para asegurar que esté centrado */
     font-size: 10px;
     color: black;
     border: none;
     padding: 10px;
     cursor: pointer;
-   
     transition: background-color 0.3s ease; /* Añadimos una transición suave */
 }
 
 
+/* Responsividad */
+@media (max-width: 1024px) {
+    .popup-content {
+        max-width: 90vw; /* Ajustamos el ancho para pantallas de tablets */
+        max-height: 70vh;
+    }
 
+    .popup-text h2 {
+        font-size: 5vw; /* Ajuste del tamaño de la fuente */
+    }
+
+    .popup-text p {
+        font-size: 3vw; /* Ajuste del tamaño del texto */
+    }
+
+    .close-btn {
+        font-size: 3vw; /* Ajuste del tamaño del botón */
+        padding: 2vh 3vw; /* Ajuste del padding */
+    }
+}
+
+@media (max-width: 768px) {
+    .popup-content {
+        max-width: 50vw; /* Ajustamos el ancho para pantallas más pequeñas */
+        max-height: 40vh;
+        padding: 5vw 5vw;
+    }
+
+    .popup-text h2 {
+        font-size: 6vw; /* Ajuste del tamaño de la fuente */
+    }
+
+    .popup-text p {
+        font-size: 4vw; /* Ajuste del tamaño del texto */
+    }
+
+    .close-btn {
+        font-size: 4vw; /* Ajuste del tamaño del botón */
+        padding: 4vw 6vw; /* Ajuste del padding */
+    }
+}
+
+@media (max-width: 480px) {
+    .popup-content {
+        max-width: 80vw;
+        max-height: 50vh;
+        padding: 12vw 12vw;
+    }
+
+    .popup-text h2 {
+        font-size: 8vw; /* Ajuste del tamaño de la fuente */
+    }
+
+    .popup-text p {
+        font-size: 5vw; /* Ajuste del tamaño del texto */
+    }
+
+    .close-btn {
+        font-size: 5vw; /* Ajuste del tamaño del botón */
+        padding: 5vw 8vw; /* Ajuste del padding */
+    }
+}
 
 
 .contenido {
