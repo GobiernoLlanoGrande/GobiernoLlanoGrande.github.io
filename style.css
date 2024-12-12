@@ -774,9 +774,7 @@ display: none; /* Oculto por defecto */
     opacity: 1; /* Hacer las tarjetas visibles */
     transform: translateY(0); /* Moverlas a su posición original */
     z-index: 1; /* Traer las tarjetas al frente */
-}
-
-/* Estilos para el botón con solo imagen */
+}/* Estilos para el botón con solo imagen */
 .boton-imagen {
     cursor: pointer;        
     display: inline-block;  
@@ -793,9 +791,6 @@ display: none; /* Oculto por defecto */
     transform: scale(1.03);   /* Hace que la imagen crezca un poco al pasar el ratón */
     transition: transform 0.3s ease;  /* Suaviza el cambio de tamaño */
 }
-
-
-
 
 /* Estilos para el fondo oscuro y la imagen emergente */
 .popup {
@@ -834,6 +829,44 @@ display: none; /* Oculto por defecto */
     height: auto;
 }
 
+@keyframes animate__zoomInDown {
+    from {
+        opacity: 0;
+        transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -1000px, 0);
+        animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+    60% {
+        opacity: 1;
+        transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 10px, 0);
+        animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes animate__zoomOutDown {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        transform: scale3d(0.1, 0.1, 0.1) translate3d(0, 1000px, 0);
+    }
+}
+
+.popup.active {
+    visibility: visible;
+}
+
+.popup.animate__zoomInDown {
+    animation: animate__zoomInDown 0.75s both;
+}
+
+.popup.animate__zoomOutDown {
+    animation: animate__zoomOutDown 0.75s both;
+}
 @keyframes moveLeftRight {
     0% {
         transform: translateX(0); /* Empieza en la posición original */
