@@ -724,7 +724,7 @@ footer {
 
 /* Estilos para el menú */
 .menu {
-    animation:  fadeInUp  0.75s both;;
+    animation:  fadeInUp  0.75s both;
 display: none; /* Oculto por defecto */
     filter: blur(0px); /* Aplica el efecto de desenfoque */
     transition: filter 0.3s ease, max-height 0.5s ease; /* Transición suave para el desenfoque y la animación de altura */
