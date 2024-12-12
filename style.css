@@ -703,9 +703,28 @@ footer {
 }
 
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInUp {
+  animation-name: fadeInUp;
+}
+
+
+
 
 /* Estilos para el menú */
 .menu {
+    animation:  fadeInUp;
 display: none; /* Oculto por defecto */
     filter: blur(0px); /* Aplica el efecto de desenfoque */
     transition: filter 0.3s ease, max-height 0.5s ease; /* Transición suave para el desenfoque y la animación de altura */
@@ -774,7 +793,9 @@ display: none; /* Oculto por defecto */
     opacity: 1; /* Hacer las tarjetas visibles */
     transform: translateY(0); /* Moverlas a su posición original */
     z-index: 1; /* Traer las tarjetas al frente */
-}/* Estilos para el botón con solo imagen */
+}
+
+/* Estilos para el botón con solo imagen */
 .boton-imagen {
     cursor: pointer;        
     display: inline-block;  
