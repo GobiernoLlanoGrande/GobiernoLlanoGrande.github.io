@@ -1057,55 +1057,52 @@ display: none; /* Oculto por defecto */
 
 
 
+
 /* Estilos generales para los contenedores */
 .contenedor {
   width: 300px;
   text-align: center;
   cursor: pointer;
-  overflow: hidden; /* Asegura que no se salgan los elementos */
+  overflow: hidden;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 20px;
 }
-
 
 /* Contenedor principal que alineará los elementos a la derecha */
 .contenedor-principal {
   display: flex;
-  flex-wrap: wrap; /* Permite que los elementos se envuelvan */
-  justify-content: center; /* Alinea los elementos en el centro */
-  gap: 110px; /* Espacio entre los contenedores */
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px; /* Espacio entre los contenedores */
   padding: 20px;
 }
 
-/* Estilos generales para los contenedores */
-.contenedor {
-  width: 300px;
-  text-align: center;
-  cursor: pointer;
-  overflow: hidden; /* Asegura que no se salgan los elementos */
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin-bottom: 20px; /* Añadir espacio inferior */
+/* Contenedor de las imágenes dentro de cada contenedor */
+.imagenes-menu {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Dos imágenes por fila */
+  gap: 10px; /* Espacio entre las imágenes */
 }
 
 /* Estilos para las imágenes dentro de los contenedores */
 .contenedor img {
   width: 100%;
+  height: auto;
   border-radius: 8px;
   transition: transform 0.3s ease;
 }
 
 /* Efecto al pasar el cursor */
 .contenedor:hover {
-  transform: scale(1.05); /* Agranda el contenedor */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Aumenta la sombra */
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 /* Efecto al pasar el cursor sobre la imagen */
 .contenedor:hover img {
-  transform: scale(1.1); /* Agranda la imagen */
+  transform: scale(1.1);
 }
 
 /* Estilo para el texto */
