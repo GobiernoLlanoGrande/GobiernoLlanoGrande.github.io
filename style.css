@@ -898,7 +898,7 @@ display: none; /* Oculto por defecto */
     background: rgba(0, 0, 0, 0.7); /* Fondo oscuro */
     z-index: 1000; /* Para que esté por encima del contenido */
     visibility: hidden; /* Inicialmente está oculto */
-    animation: animate__zoomInLeft 1s both;
+    animation: animate__zoomInLeft 5s both;
 }
 
 
