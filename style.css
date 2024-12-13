@@ -898,7 +898,28 @@ display: none; /* Oculto por defecto */
     background: rgba(0, 0, 0, 0.7); /* Fondo oscuro */
     z-index: 1000; /* Para que esté por encima del contenido */
     visibility: hidden; /* Inicialmente está oculto */
+    animation: animate__zoomInLeft 1s both;
 }
+
+
+@keyframes animate__zoomInLeft {
+    from {
+        opacity: 0;
+        transform: scale(0.5) translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateX(0);
+    }
+}
+
+
+
+
+
+
+
+
 
 .popup-content {
     background: white;
