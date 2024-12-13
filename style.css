@@ -1,14 +1,16 @@
-
 body {
-    
-    background-color: #fff6f9;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    margin: 0;
-    font-family: Arial, sans-serif;
- animation: glowing 3s infinite alternate; /* Animación de brillo */
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.8));
+    background-size: 200% 200%;
+    animation: waveAnimation 2s infinite alternate;
+}
 
+@keyframes waveAnimation {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 0;
+    }
 }
 
 .g1{
