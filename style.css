@@ -270,7 +270,7 @@ body {
     padding-bottom: 30%;  /* Esto mantiene la relación de aspecto 16:9 (100 / 16 * 9 = 56.25%) */
     overflow: hidden;
     border-radius:5px;
-    animation: animateBounceInLeft 1s both;
+    animation: animateBounceInLeft 6s both;
 }
 
 
