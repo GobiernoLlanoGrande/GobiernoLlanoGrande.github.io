@@ -976,8 +976,6 @@ display: none; /* Oculto por defecto */
     cursor: pointer;
     transition: background-color 0.3s ease; /* Añadimos una transición suave */
 }
-
-
 /* Responsividad */
 @media (max-width: 1024px) {
     .popup-content {
@@ -1067,7 +1065,7 @@ display: none; /* Oculto por defecto */
     }
 
     .close-btn {
-        top: 5vh; /* Mantiene la distancia desde el borde superior */
+        top: 6vh; /* Mantiene la distancia desde el borde superior */
         font-size: 14px; /* Aumenta el tamaño de la fuente */
         padding: 12px; /* Aumenta el padding */
     }
@@ -1098,7 +1096,7 @@ display: none; /* Oculto por defecto */
     }
 
     .close-btn {
-        top: 5vh; /* Mantiene la distancia desde el borde superior */
+        top: 6vh; /* Mantiene la distancia desde el borde superior */
         font-size: 16px; /* Aumenta el tamaño de la fuente */
         padding: 14px; /* Aumenta el padding */
     }
