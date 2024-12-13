@@ -37,28 +37,6 @@ body {
     object-fit: cover;
 }
 
-/* Medias Queries para pantallas pequeñas (móviles) */
-@media (max-width: 600px) {
-    .encima-wrapper {
-        height: 23.4375vw; /* En pantallas pequeñas, el banner toma el 50% del ancho de la pantalla */
-    }
-   
-}
-
-/* Medias Queries para tabletas */
-@media (min-width: 601px) and (max-width: 1024px) {
-    .banner {
-        height: 40vw; /* En tabletas, el banner toma un tamaño proporcional */
-    }
-}
-
-/* Medias Queries para pantallas grandes */
-@media (min-width: 1025px) and (max-width: 2000px){
-    .banner {
-        height: 230px; /* En pantallas grandes, mantén el tamaño original */
-    }
-}
-
 .banner-buttons {
     position: absolute;
     left: 80px; 
@@ -241,20 +219,9 @@ body {
     text-decoration: none;
     width: 98.4%;
     height: 25px;
-
       background-size: 500% 100%; 
-  animation: shine 4s linear infinite;
-}
 
-@keyframes shine {
-  0% {
-    background-position: 100% 0;
-  }
-  100% {
-    background-position: -100% 0;
-  }
 }
-
 
 
 .line {
@@ -302,7 +269,28 @@ body {
     height: 0;
     padding-bottom: 30%;  /* Esto mantiene la relación de aspecto 16:9 (100 / 16 * 9 = 56.25%) */
     overflow: hidden;
+    border-radius:5px;
+    animation: animateBounceInLeft 1s both;
 }
+
+
+@keyframes animateBounceInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-300px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.elemento {
+    animation: animateBounceInLeft 1s both;
+}
+
+
+
 
 /* Estilo para el video */
 video {
@@ -312,6 +300,8 @@ video {
     width: 100%;
     height: 100%;
     object-fit: cover;  /* Asegura que el video cubra todo el contenedor sin distorsión */
+    border-radius:5px;
+    
 }
 
 
