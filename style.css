@@ -1214,7 +1214,7 @@ display: none; /* Oculto por defecto */
 }
 
 /* Media Queries para dispositivos pequeños */
-@media (max-width: 1200px) {
+@media (max-width: 1300px) {
   .contenedor-principal {
     gap: 40px; /* Reduce el espacio entre los elementos */
   }
