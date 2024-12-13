@@ -18,6 +18,7 @@ body {
 
 .g1:hover{
 
+    color: black;
     animation: animate__rubberBand 4s both;
 }
 
