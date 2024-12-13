@@ -174,6 +174,60 @@ body {
 
 
 
+.linea {
+
+    position: -webkit-sticky; /* Para compatibilidad con Safari */
+    position: sticky;
+    top: 0; /* Esto lo hace quedarse en la parte superior al hacer scroll */
+    z-index: 1000;
+    justify-content: center;
+    background-image:url('img/cinta2.jpg'); 
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    float: left;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    width: 98.4%;
+    height: 38px;
+}
+
+
+.linea img {
+    margin-right: 70px;
+}
+
+
+
+.linea .search-container {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 45px;
+}
+
+.linea .search-container input[type="text"] {
+    padding: 5px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.linea .search-container button {
+    padding: 5px 10px;
+    background-color: #a4a4a4;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.linea .search-container button:hover {
+    background-color: #dcdcdc;
+}
+
+
+
 .l {
     justify-content: center;
     background: linear-gradient(45deg, #230202, #690a0a, #ad1818, #690a0a, #230202); 
@@ -211,7 +265,7 @@ body {
     padding: 1px;
     color: white;
     text-decoration: none;
-    width: 99.8%;
+    width: 100%;
     height: 0.2px;
     background: linear-gradient(135deg, #e5b61e 50%, #fed428 50%); 
     text-align: center;
@@ -226,7 +280,7 @@ body {
     padding: 1px;
     color: white;
     text-decoration: none;
-    width: 99.8%;
+    width: 100%;
     height: 1px;
     background-color: #d53468;
     text-align: center;
