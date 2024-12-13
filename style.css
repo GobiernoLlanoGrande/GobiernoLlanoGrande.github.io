@@ -184,7 +184,7 @@ body {
 }
 
 /* Asegura que el contenido se ajuste correctamente en pantallas más pequeñas */
-@media (max-width: 768px) {
+@media (max-width: 1300px) {
     .linea {
         font-size: 14px; /* Ajusta el tamaño de la fuente para pantallas más pequeñas */
         padding: 8px; /* Ajusta el padding para no hacer el espacio demasiado grande */
