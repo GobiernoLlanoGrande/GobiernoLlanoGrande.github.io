@@ -78,7 +78,7 @@ section {
     top: 0; /* Esto lo hace quedarse en la parte superior al hacer scroll */
     z-index: 1000;
     justify-content: center;
-    background-image:url('img/cinta2.jpg'); 
+    background-image:url('img/cinta.jpg'); 
     overflow: hidden;
     font-family: Arial, Helvetica, sans-serif;
     float: center;
