@@ -72,23 +72,16 @@ section {
     margin-bottom: 30px;
 }
 
-/* Estilo para el pie de página */
-footer {
-            text-align: left;
-            background-color: #740606;
-            color: white;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-}
-
 .linea {
+    position: -webkit-sticky; /* Para compatibilidad con Safari */
+    position: sticky;
+    top: 0; /* Esto lo hace quedarse en la parte superior al hacer scroll */
+    z-index: 1000;
     justify-content: center;
-    background-image:url('img/cinta.jpg'); /* Gradiente de verde tenue a verde más fuerte */
+    background-image:url('img/cinta2.jpg'); 
     overflow: hidden;
     font-family: Arial, Helvetica, sans-serif;
-    float: left;
+    float: center;
     display: flex;
     align-items: center;
     padding: 10px;
@@ -170,3 +163,98 @@ footer {
             transition: transform 0.3s ease;
             border-radius: 8px;
         }
+
+/* Estilos generales para el footer */
+footer {
+     background-color: #8a1111;  /*Color de Fondo  */
+;  /* Fondo  */
+  color: #fff;             /* Texto blanco */
+  padding: 40px 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Contenedor principal del footer */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Estilos para cada sección dentro del footer */
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+  margin-bottom: 20px;
+}
+
+.footer-section h3 {
+  color: #f4f4f4;        /* Títulos en gris claro */
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.footer-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-section li {
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+.footer-section a {
+  color: #ccc;           /* Enlaces en gris claro */
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  color: #1e90ff;        /* Color azul al pasar el mouse */
+  text-decoration: underline;
+}
+
+/* Estilos para los enlaces de redes sociales */
+.social-media {
+  display: flex;
+  gap: 15px;
+}
+
+.social-media li {
+  list-style: none;
+}
+
+.social-media a {
+  color: #ccc;
+  font-size: 1rem;
+}
+
+.social-media a:hover {
+  color: #1e90ff;        /* Color azul al pasar el mouse */
+}
+
+/* Estilo para el pie de página */
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.875rem;
+  color: #aaa;           /* Texto de derechos de autor en gris claro */
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+/* Media queries para hacer el footer más responsivo */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-section {
+    min-width: 100%;
+    margin-bottom: 20px;
+  }
+}
